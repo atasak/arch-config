@@ -1,3 +1,4 @@
 theming: link to /etc/theming
 i3config: link to .config/i3/config
 quteconfig.py: link to .config/qutebrowser/config.py
+dict/words: link to /usr/share/dict/words
