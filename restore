@@ -1,17 +1,21 @@
 #! /bin/bash
 
+AH="$HOME/projects/.home/arch"
+
 # Restore installed packages
 ~/projects/.home/arch/pacman/restore
 
 # Link pywall and spotlight scripts
-sudo ln -s theming /etc/theming
+sudo ln -s "$AH/theming" /etc/theming
 
-sudo ln -s systemd/spotlight.service /etc/systemd/system/spotlight.service
-sudo ln -s systemd/spotlight.service /etc/systemd/system/spotlight.timer
+sudo ln -s "$AH/systemd/spotlight.service" /etc/systemd/system/spotlight.service
+sudo ln -s "$AH/systemd/spotlight.service" /etc/systemd/system/spotlight.timer
+
+sudo systemctl enable spotlight.timer
 
 # Link qutebrowser config and words
-ln -s quteconfig.py ~/.config/qutebrowser/config.py
-ln -s dict/words /usr/share/dict/words
+ln -s "$AH/quteconfig.py" ~/.config/qutebrowser/config.py
+ln -s "$AH/dict/words" /usr/share/dict/words
 
 # Install qutebrowser languages
 wget -O ~/Downloads/dictcli.py https://raw.githubusercontent.com/qutebrowser/qutebrowser/master/scripts/dictcli.py
@@ -19,21 +23,25 @@ sudo ~/Downloads/dictcli.py install nl-NL
 sudo ~/Downloads/dictcli.py install en-GB
 
 # Link i3 config
-ln -s i3config ~/.config/i3/config
+ln -s "$AH/i3config" ~/.config/i3/config
 
 # Link lightdm config
-sudo ln -s lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+sudo ln -s "$AH/lightdm-gtk-greeter.conf" /etc/lightdm/lightdm-gtk-greeter.conf
 
 # Link vim config
-ln -s rc/vimrc ~/.vimrc
-ln -s rc/vim ~/.vim
+ln -s "$AH/rc/vimrc" ~/.vimrc
+ln -s "$AH/rc/vim" ~/.vim
 
 # Link zshrc
-ln -s rc/zshrc ~/.zshrc
+ln -s "$AH/rc/zshrc" ~/.zshrc
 
 # Link bin
-ln -s bin ~/.bin
+ln -s "$AH/bin" ~/.bin
 
 # Create mount points for lilo and pi
 mkdir ~/lilo
 mkdir ~/py
+
+# Enable redshift at startup
+sudo ln -s "$AH/systemd/redshift.service" /etc/systemd/system/redshift.service
+sudo systemctl enable redshift.service
