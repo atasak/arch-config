@@ -1,0 +1,35 @@
+#! /bin/bash
+
+if [ "$#" -eq 0 ]; then
+    for file in *.tex
+    do
+        pdflatex $file -interaction=batchmode
+        pdf=${file/%tex/pdf}
+        if [ -f "$pdf" ]; then
+            pdflatex $file -interaction=batchmode
+        fi
+    done
+else
+    if [[ $1 == *.tex ]]; then
+        tex=$1
+        pdf=${1/%tex/pdf}
+    else
+        tex=$1".tex"
+        pdf=$1".pdf"
+    fi
+    pdflatex $tex -interaction=batchmode
+    if [ -f "$pdf" ]; then
+        pdflatex $1 -interaction=batchmode
+    fi
+fi
+                 
+if [ -d "logs" ]; then
+    mv *.log logs
+fi
+
+if [ -d "pdf" ]; then
+    mv *.pdf pdf
+fi
+
+rm *.toc *.aux *.dvi *.tdo *.synctex.gz *.out *.log *.dot *.snm *.nav
+exit 0

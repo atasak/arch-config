@@ -1,0 +1,4 @@
+#sshfs -o idmap=user niek@192.168.1.33:/ /home/niek/pi
+sshfs -o idmap=user njanssen@lilo.science.ru.nl:/ /home/niek/lilo
+#sshfs -o idmap=user niek@ossp.artemisc.eu:/home/niek /home/niek/extern/am-home
+#sshfs -o idmap=user niek@ossp.artemisc.eu:/ /home/niek/extern/am-root

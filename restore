@@ -3,8 +3,33 @@
 # Restore installed packages
 ~/projects/.home/arch/pacman/restore
 
-# Re-link config files
+# Link pywall and spotlight scripts
 ln -s theming /etc/theming
-ln -s i3config ~/.config/i3/config
+
+ln -s systemd/spotlight.service /etc/systemd/system/spotlight.service
+ln -s systemd/spotlight.service /etc/systemd/system/spotlight.timer
+
+# Link qutebrowser config and words
 ln -s quteconfig.py ~/.config/qutebrowser/config.py
 ln -s dict/words /usr/share/dict/words
+
+# Install qutebrowser languages
+wget -O ~/Downloads/dictcli.py https://raw.githubusercontent.com/qutebrowser/qutebrowser/master/scripts/dictcli.py
+~/Downloads/dictcli.py install nl-NL
+~/Downloads/dictcli.py install en-GB
+
+# Link i3 config
+ln -s i3config ~/.config/i3/config
+
+# Link lightdm config
+ln -s lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+
+# Link vim config
+ln -s rc/vimrc ~/.vimrc
+ln -s rc/vim ~/.vim
+
+# Link zshrc
+ln -s rc/zshrc ~/.zshrc
+
+# Link bin
+ln -s bin ~/.bin

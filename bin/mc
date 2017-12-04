@@ -1,0 +1,3 @@
+cd ~/.minecraft
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar $1.jar
+exit
