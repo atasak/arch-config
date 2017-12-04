@@ -1,1 +1,1 @@
-pacman -S < ~/projects/.home/arch/pacman/packagelist
+sudo pacman -S < ~/projects/.home/arch/pacman/packagelist
