@@ -1,0 +1,6 @@
+[Unit]
+Description="Update windows spotlight theme"
+
+[Service]
+ExecStart=/etc/theming/scripts/spotlight.sh
+User=niek

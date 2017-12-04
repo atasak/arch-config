@@ -1,0 +1,10 @@
+#! /bin/bash
+
+# Restore installed packages
+~/projects/.home/arch/pacman/restore
+
+# Re-link config files
+ln -s theming /etc/theming
+ln -s i3config ~/.config/i3/config
+ln -s quteconfig.py ~/.config/qutebrowser/config.py
+ln -s dict/words /usr/share/dict/words
