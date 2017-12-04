@@ -33,3 +33,7 @@ ln -s rc/zshrc ~/.zshrc
 
 # Link bin
 ln -s bin ~/.bin
+
+# Create mount points for lilo and pi
+mkdir ~/lilo
+mkdir ~/py
