@@ -3,6 +3,32 @@
 ####### Arch Anywhere ZSH configuration file    #######
 #######################################################
 
+### Setup Oh my ZSH
+###################
+export ZSH=/home/niek/.oh-my-zsh
+
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+### Setup vi mode
+#################
+bindkey -v
+function zle-line-init zle-keymap-select {
+    GIT_PROMPT="%{$fg_bold[yellow]%}[%  $(current_branch) ]% %{$reset_color%}"
+    VIM_NORMAL_PROMPT="%{$fg_bold[yellow]%}[%  NORMAL ]% %{$reset_color%}"
+    VIM_INSERT_PROMPT="%{$fg_bold[yellow]%}[%  INSERT ]% %{$reset_color%}"
+    VIM_PROMPT="${${KEYMAP/vicmd/$VIM_NORMAL_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}" 
+    RPS1="$VIM_PROMPT $GIT_PROMPT $EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+
 ### Set/unset ZSH options
 #########################
 # setopt NOHUP
@@ -71,6 +97,7 @@ unsetopt ALL_EXPORT
 alias la='ls -lah'
 alias ll='ls -al'
 alias ls='ls --color=auto '
+alias l='ls'
 
 ### Bind keys
 #############
@@ -174,7 +201,6 @@ export PATH="/home/niek/.bin:$PATH"
 ### Aliases
 alias pdf='apvlv'
 alias f='fg'
-alias l='ls'
 
 alias hades='java -jar ~/projects/ru/proc/hades/hades.jar'
 alias webstorm='~/.webstorm/bin/webstorm.sh'

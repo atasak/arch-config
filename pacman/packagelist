@@ -11,6 +11,7 @@ bluez-utils
 bzip2
 coreutils
 cryptsetup
+cups
 device-mapper
 dhcpcd
 dialog
@@ -93,6 +94,7 @@ redshift
 reiserfsprogs
 s-nail
 screenfetch
+scrot
 sed
 shadow
 sudo
@@ -162,5 +164,6 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xterm
+zip
 zsh
 zsh-syntax-highlighting
