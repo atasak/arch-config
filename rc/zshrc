@@ -201,6 +201,7 @@ export PATH="/home/niek/.bin:$PATH"
 ### Aliases
 alias pdf='apvlv'
 alias f='fg'
+alias please='sudo !!'
 
 alias hades='java -jar ~/projects/ru/proc/hades/hades.jar'
 alias webstorm='~/.webstorm/bin/webstorm.sh'

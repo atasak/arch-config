@@ -68,6 +68,7 @@ mdadm
 mesa
 nano
 netctl
+nmap
 nodejs
 npm
 ntfs-3g
@@ -119,6 +120,7 @@ which
 wireless_tools
 wpa_actiond
 wpa_supplicant
+xclip
 xdg-user-dirs
 xdotool
 xf86-input-synaptics
