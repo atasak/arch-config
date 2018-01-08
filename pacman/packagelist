@@ -168,6 +168,7 @@ xorg-xwininfo
 xorg-xwud
 xterm
 zathura
+zathura-pdf-mupdf
 zip
 zsh
 zsh-syntax-highlighting
