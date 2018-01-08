@@ -29,6 +29,7 @@ flex
 gawk
 gcc
 gcc-libs
+gedit
 gettext
 git
 glibc
@@ -166,6 +167,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xterm
+zathura
 zip
 zsh
 zsh-syntax-highlighting

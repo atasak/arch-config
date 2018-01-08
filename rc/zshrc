@@ -199,11 +199,12 @@ export PATH="/home/niek/.anaconda/bin:$PATH"
 export PATH="/home/niek/.bin:$PATH"
 
 ### Aliases
-alias pdf='apvlv'
+alias pdf='zathura'
 alias f='fg'
 alias please='sudo !!'
 
 alias hades='java -jar ~/projects/ru/proc/hades/hades.jar'
 alias webstorm='~/.webstorm/bin/webstorm.sh'
+alias pycharm='~/.pycharm/bin/pycharm.sh'
 
 setsid wal -r
