@@ -856,7 +856,7 @@ c.hints.min_chars = 2
 ##   - number: Use numeric hints. (In this mode you can also type letters from the hinted element to filter and reduce the number of elements that are hinted.)
 ##   - letter: Use the chars in the `hints.chars` setting.
 ##   - word: Use hints words based on the html elements and the extra words.
-c.hints.mode = 'word'
+c.hints.mode = 'letter'
 
 ## A comma-separated list of regexes to use for 'next' links.
 ## Type: List of Regex
