@@ -1206,7 +1206,7 @@ c.tabs.title.format = '{index}: {title} -- {host}'
 ## The width of the tab bar if it's vertical, in px or as percentage of
 ## the window.
 ## Type: PercOrInt
-c.tabs.width.bar = '30%'
+## c.tabs.width.bar = '30%'
 
 ## Width of the progress indicator (0 to disable).
 ## Type: Int
