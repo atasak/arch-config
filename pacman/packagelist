@@ -53,6 +53,7 @@ jq
 jre8-openjdk
 keychain
 less
+lib32-libgpg-error
 licenses
 lightdm
 lightdm-gtk-greeter
@@ -100,6 +101,7 @@ screenfetch
 scrot
 sed
 shadow
+steam
 sudo
 sysfsutils
 system-config-printer
@@ -112,6 +114,7 @@ texlive-latexextra
 texlive-science
 trizen
 ttf-dejavu
+ttf-liberation
 ufw
 unzip
 usbutils
