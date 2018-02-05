@@ -1,4 +1,6 @@
 alsa-utils
+arduino
+arduino-avr-core
 autoconf
 automake
 bash
@@ -53,7 +55,6 @@ jq
 jre8-openjdk
 keychain
 less
-lib32-libgpg-error
 licenses
 lightdm
 lightdm-gtk-greeter
@@ -75,6 +76,7 @@ nodejs
 npm
 ntfs-3g
 openssh
+openttd
 pacman
 patch
 pavucontrol
@@ -101,7 +103,6 @@ screenfetch
 scrot
 sed
 shadow
-steam
 sudo
 sysfsutils
 system-config-printer
@@ -114,7 +115,6 @@ texlive-latexextra
 texlive-science
 trizen
 ttf-dejavu
-ttf-liberation
 ufw
 unzip
 usbutils
