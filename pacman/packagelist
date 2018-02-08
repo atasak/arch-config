@@ -18,6 +18,7 @@ dhcpcd
 dialog
 diffutils
 dmenu
+docker
 e2fsprogs
 efibootmgr
 fakeroot
@@ -31,6 +32,7 @@ gawk
 gcc
 gcc-libs
 gdal
+gdmap
 gedit
 gettext
 git

@@ -10,6 +10,8 @@ echo "Backing up installed packges..."
 
 # Update with pacman
 sudo pacman -Syu
+# Clear pacman cache
+sudo pacman -Sc
 
 # Push newest versions of scripts and configs to github
 cd ~/projects/.home/arch && git add . && git commit -m "Maintenance of `date`" && git push
