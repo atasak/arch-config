@@ -209,3 +209,5 @@ alias pycharm='~/.pycharm/bin/pycharm.sh'
 alias clion='~/.clion/bin/clion.sh'
 
 setsid wal -r
+
+eval `keychain --eval --noask --timeout 60 id_rsa` > /dev/null
