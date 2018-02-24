@@ -2,7 +2,9 @@
 
 # Clean downloads folder
 echo "Cleaning downloads folder..."
-rm -rf ~/Downloads/*
+find ~/Downloads/ -type f -mtime +10 -exec rm {} \;
+find ~/Downloads/ -type d -empty -exec rmdir {} \;
+mkdir -p ~/Downloads/
 
 # Backup installed packages
 echo "Backing up installed packges..."
