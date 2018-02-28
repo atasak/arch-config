@@ -30,7 +30,13 @@ focus_follows_mouse no
 bar {
 	position top
     status_command i3status
+    mode hide
+    hidden_state hide
+    modifier $mod
 }
+
+new_window pixel 3
+hide_edge_borders both
 
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $fg i3wm.color2 #f0f0f0
@@ -51,7 +57,7 @@ floating_modifier $mod
 bindsym $mod+z exec i3lock -c 333333 -i /etc/theming/img/lockscreen.png
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+q kill

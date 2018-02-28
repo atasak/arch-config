@@ -197,6 +197,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ### PATH exports
 export PATH="/home/niek/.anaconda/bin:$PATH"
 export PATH="/home/niek/.bin:$PATH"
+export PATH="/home/niek/projects/ru/bd/bigdata-blog-2018-atasak/src/docker-utils/commands/:$PATH"
 
 ### Aliases
 alias pdf='zathura'
