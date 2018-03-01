@@ -55,6 +55,7 @@ imagemagick
 inetutils
 iproute2
 iputils
+jdk7-openjdk
 jfsutils
 jq
 jre8-openjdk
