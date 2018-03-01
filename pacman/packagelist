@@ -1,6 +1,7 @@
 alsa-utils
 arduino
 arduino-avr-core
+atom
 autoconf
 automake
 bash
@@ -102,7 +103,6 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 python
-python-kivy
 python-pip
 qt4
 qutebrowser
