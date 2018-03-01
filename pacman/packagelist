@@ -62,6 +62,7 @@ jq
 jre8-openjdk
 keychain
 less
+libglade
 libidl2
 licenses
 lightdm
@@ -103,7 +104,10 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 python
+python-kivy
 python-pip
+python2-kivy
+python2-pip
 qt4
 qutebrowser
 ranger
