@@ -39,6 +39,7 @@ gettext
 git
 glibc
 gnome-packagekit
+google-chrome
 grep
 grub
 gst-plugins-base

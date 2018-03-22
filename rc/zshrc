@@ -204,11 +204,6 @@ alias pdf='zathura'
 alias f='fg'
 alias please='sudo !!'
 
-alias hades='java -jar ~/projects/ru/proc/hades/hades.jar'
-alias webstorm='~/.webstorm/bin/webstorm.sh'
-alias pycharm='~/.pycharm/bin/pycharm.sh'
-alias clion='~/.clion/bin/clion.sh'
-
 setsid wal -r
 
 eval `keychain --eval --noask --timeout 60 id_rsa` > /dev/null
