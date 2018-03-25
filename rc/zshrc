@@ -199,6 +199,10 @@ export PATH="/home/niek/.anaconda/bin:$PATH"
 export PATH="/home/niek/.bin:$PATH"
 export PATH="/home/niek/projects/ru/bd/bigdata-blog-2018-atasak/src/docker-utils/commands/:$PATH"
 
+### Clean setup
+export CLEAN_HOME="/home/niek/.clean"
+export PATH="$CLEAN_HOME/bin:$PATH"
+
 ### Aliases
 alias pdf='zathura'
 alias f='fg'

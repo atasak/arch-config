@@ -1,13 +1,28 @@
-" Add go packages
-filetype off
-filetype plugin indent off
-set runtimepath+=/usr/lib/go/misc/vim
-filetype plugin indent on
+" Basic runtime settings
+set nocompatible
 syntax on
 
-let g:C_UseTool_cmake = 'yes' 
-let g:C_UseTool_doxygen = 'yes' 
+" Vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"""""""""""
+" Plugins "
+"""""""""""
+Plugin 'tpope/vim-fugitive'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+Plugin 'norm2782/vim-clean'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Basic editor settings
 set cpoptions+=$
 set virtualedit=all
 set wildmenu
@@ -79,6 +94,3 @@ set makeprg=make
 " Relative AND absolute line numbers
 set relativenumber
 set number
-
-" Load plugins
-call pathogen#infect()
