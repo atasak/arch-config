@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'norm2782/vim-clean'
 
 " All of your Plugins must be added before the following line
@@ -59,6 +60,21 @@ nmap <F1> <Esc>
 
 " Repeat colon (:) command on comma
 map , @:<CR>
+
+" NerdTree git setup
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "~",
+    \ "Staged"    : ">",
+    \ "Untracked" : "<",
+    \ "Renamed"   : "M",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "X",
+    \ "Dirty"     : "~",
+    \ "Clean"     : "_",
+    \ 'Ignored'   : ',',
+    \ "Unknown"   : "?"
+    \ }
+let g:NERDTreeShowIgnoredStatus = 1
 
 " YouCompleteMe settings
 let g:SuperTabDefaultCompletionType = 'context'
