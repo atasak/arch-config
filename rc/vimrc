@@ -42,6 +42,12 @@ set smarttab
 set expandtab
 set autoindent
 
+" Set folder for swapfiles
+set bdir -= .
+set bdir += /tmp
+set dir -= .
+set dir += /tmp
+
 " Map case sensitive commands (because Derp)
 :command WQA wqa
 :command WQa wqa
