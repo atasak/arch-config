@@ -17,6 +17,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'norm2782/vim-clean'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'wesQ3/vim-windowswap'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,6 +43,8 @@ set softtabstop=4
 set smarttab
 set expandtab
 set autoindent
+
+let mapleader = "\\"
 
 " Map case sensitive commands (because Derp)
 :command WQA wqa

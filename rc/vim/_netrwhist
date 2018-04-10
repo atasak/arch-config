@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/niek/projects/ru/ip/Niek/s4134699'
-let g:netrw_dirhist_2='/home/niek/projects/ru/ip/niek7/s4384873'
-let g:netrw_dirhist_3='/etc/ghostscript/cidfmap.d'
