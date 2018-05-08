@@ -58,6 +58,7 @@ inetutils
 iproute2
 iputils
 jdk7-openjdk
+jdk8-openjdk
 jfsutils
 jq
 jre8-openjdk
