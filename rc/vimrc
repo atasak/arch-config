@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'norm2782/vim-clean'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -44,7 +45,11 @@ set smarttab
 set expandtab
 set autoindent
 
-let mapleader = "\\"
+" Set folder for swapfiles
+set bdir -= .
+set bdir += /tmp
+set dir -= .
+set dir += /tmp
 
 " Map case sensitive commands (because Derp)
 :command WQA wqa
@@ -64,6 +69,21 @@ nmap <F1> <Esc>
 
 " Repeat colon (:) command on comma
 map , @:<CR>
+
+" NerdTree git setup
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "~",
+    \ "Staged"    : ">",
+    \ "Untracked" : "<",
+    \ "Renamed"   : "M",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "X",
+    \ "Dirty"     : "~",
+    \ "Clean"     : "_",
+    \ 'Ignored'   : ',',
+    \ "Unknown"   : "?"
+    \ }
+let g:NERDTreeShowIgnoredStatus = 1
 
 " YouCompleteMe settings
 let g:SuperTabDefaultCompletionType = 'context'
