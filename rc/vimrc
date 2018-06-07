@@ -48,6 +48,26 @@ set smarttab
 set expandtab
 set autoindent
 
+" Spell checking
+set spell spelllang=en_us
+
+" Set word wrapping on column 80
+set tw=80
+
+" Fix lightline
+set laststatus=2
+
+" Make
+command Make execute "silent !make" | redraw!
+map <F5> :Make<cr>
+
+" Compile pandoc
+command Pdfrun execute "silent !pandoc --filter pandoc-citeproc -o %.pdf %" | redraw!
+map <F6> :Pdfrun<CR>
+
+" Word count
+map <F7> :!wc %<CR>
+
 " Set folder for swapfiles
 set bdir-=.
 set bdir+=/tmp

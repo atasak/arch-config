@@ -91,6 +91,7 @@ openttd
 openvpn
 pacman
 pandoc
+pandoc-citeproc
 patch
 pavucontrol
 pciutils
