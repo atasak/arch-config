@@ -42,11 +42,15 @@ set smarttab
 set expandtab
 set autoindent
 
+" Make
+command Make execute "silent! make" | redraw!
+map <F5> :Make<CR>
+
 " Set folder for swapfiles
-set bdir -= .
-set bdir += /tmp
-set dir -= .
-set dir += /tmp
+set bdir-=.
+set bdir+=/tmp
+set dir-=.
+set dir+=/tmp
 
 " Map case sensitive commands (because Derp)
 :command WQA wqa
