@@ -58,6 +58,7 @@ inetutils
 iproute2
 iputils
 jdk7-openjdk
+jdk8-openjdk
 jfsutils
 jq
 jre8-openjdk
@@ -90,6 +91,7 @@ openttd
 openvpn
 pacman
 pandoc
+pandoc-citeproc
 patch
 pavucontrol
 pciutils
@@ -134,6 +136,7 @@ texlive-core
 texlive-fontsextra
 texlive-latexextra
 texlive-science
+tk
 transmission-gtk
 trizen
 ttf-dejavu
