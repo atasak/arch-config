@@ -1,7 +1,6 @@
 alsa-utils
 arduino
 arduino-avr-core
-atom
 autoconf
 automake
 bash
@@ -22,6 +21,7 @@ dmenu
 docker
 e2fsprogs
 efibootmgr
+evince
 fakeroot
 feh
 file
@@ -40,6 +40,7 @@ git
 glibc
 gnome-packagekit
 google-chrome
+gparted
 grep
 grub
 gst-plugins-base
@@ -83,8 +84,6 @@ mesa
 nano
 netctl
 nmap
-nodejs
-npm
 ntfs-3g
 openssh
 openttd
@@ -98,7 +97,7 @@ pciutils
 pcmciautils
 perl
 phonon-qt4-vlc
-pkg-config
+pkgconf
 portmidi
 powerline
 procps-ng
@@ -111,6 +110,7 @@ python-kivy
 python-pip
 python2-kivy
 python2-pip
+python2-requests
 qt4
 qutebrowser
 redshift
@@ -133,6 +133,7 @@ tar
 texinfo
 texlive-core
 texlive-fontsextra
+texlive-langcyrillic
 texlive-latexextra
 texlive-science
 tk

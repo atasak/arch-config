@@ -31,6 +31,7 @@ set cpoptions+=$
 set virtualedit=all
 set wildmenu
 " Display linenumbers
+set relativenumber
 set number
 " Set case insensitive searching
 set ic
@@ -85,13 +86,8 @@ set dir+=/tmp
 :command Qa qa
 :command QA qa
 
-" Map F1 to Esc
-map <F1> <Esc>
-imap <F1> <Esc>
-nmap <F1> <Esc>
-
 " Repeat colon (:) command on comma
-map , @:<CR>
+map <F4> @:<CR>
 
 " NerdTree git setup
 let g:NERDTreeIndicatorMapCustom = {
@@ -110,12 +106,6 @@ let g:NERDTreeShowIgnoredStatus = 1
 
 " YouCompleteMe settings
 let g:SuperTabDefaultCompletionType = 'context'
-
-" UltiSnips settings
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="horizontal"
 
 " Filetype mappings
 au BufNewFile,BufRead *.ino set filetype=cpp
@@ -138,7 +128,3 @@ let g:clighter_libclang_file = '/usr/lib/llvm-3.6/lib/libclang.so'
 
 " Config make options
 set makeprg=make
-
-" Relative AND absolute line numbers
-set relativenumber
-set number
