@@ -132,10 +132,6 @@ systemd-sysvcompat
 tar
 texinfo
 texlive-core
-texlive-fontsextra
-texlive-langcyrillic
-texlive-latexextra
-texlive-science
 tk
 transmission-gtk
 trizen

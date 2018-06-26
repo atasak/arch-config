@@ -12,6 +12,8 @@ echo "Backing up installed packges..."
 
 # Update with pacman
 sudo pacman -Syu
+# Autoremove with pacman
+sudo pacman -Rns $(sudo pacman -Qtdq)
 # Clear pacman cache
 sudo pacman -Scc
 
