@@ -39,6 +39,7 @@ gettext
 git
 glibc
 gnome-packagekit
+gnome-system-monitor
 google-chrome
 gparted
 grep
@@ -113,6 +114,7 @@ python2-pip
 python2-requests
 qt4
 qutebrowser
+realvnc-vnc-viewer
 redshift
 reiserfsprogs
 rxvt-unicode
