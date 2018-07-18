@@ -107,8 +107,10 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 python
+python-docutils
 python-kivy
 python-pip
+python2-docutils
 python2-kivy
 python2-pip
 python2-requests
