@@ -124,6 +124,7 @@ sdl2_mixer
 sdl2_ttf
 sed
 shadow
+signal
 sudo
 sysfsutils
 system-config-printer
