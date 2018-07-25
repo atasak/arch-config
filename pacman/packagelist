@@ -1,5 +1,4 @@
 alsa-utils
-arduino
 arduino-avr-core
 autoconf
 automake
@@ -18,7 +17,6 @@ dhcpcd
 dialog
 diffutils
 dmenu
-docker
 e2fsprogs
 efibootmgr
 evince
@@ -27,7 +25,6 @@ feh
 file
 filesystem
 findutils
-firefox
 flex
 gawk
 gcc
@@ -87,7 +84,6 @@ netctl
 nmap
 ntfs-3g
 openssh
-openttd
 openvpn
 pacman
 pandoc
@@ -115,7 +111,6 @@ python2-kivy
 python2-pip
 python2-requests
 qt4
-qutebrowser
 realvnc-vnc-viewer
 redshift
 reiserfsprogs
