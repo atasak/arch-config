@@ -6,6 +6,9 @@ find ~/Downloads/ -type f -mtime +10 -exec rm {} \;
 find ~/Downloads/ -type d -empty -exec rmdir {} \;
 mkdir -p ~/Downloads/
 
+rm -rf ~/.tmp
+mkdir ~/.tmp
+
 # Backup installed packages
 echo "Backing up installed packges..."
 ~/projects/.home/arch/pacman/backup
