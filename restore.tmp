@@ -1,0 +1,16 @@
+#! /bin/bash
+
+AH="$HOME/projects/.home/arch"
+
+# Link i3 config
+ln -s "$AH/i3config" ~/.config/i3/config
+
+# Link vim config
+ln -s "$AH/rc/vimrc" ~/.vimrc
+ln -s "$AH/rc/vim" ~/.vim
+
+# Link zshrc
+ln -s "$AH/rc/zshrc" ~/.zshrc
+
+# Link bin
+ln -s "$AH/bin" ~/.bin

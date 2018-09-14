@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono, Ionicons 8
 
 # Run background script
 exec (/etc/theming/scripts/background.sh &)
@@ -57,7 +57,7 @@ floating_modifier $mod
 bindsym $mod+z exec i3lock -c 333333 -i /etc/theming/img/lockscreen.png
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+q kill

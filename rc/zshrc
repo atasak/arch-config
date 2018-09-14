@@ -209,6 +209,7 @@ alias f='fg'
 alias please='sudo !!'
 alias minecraft='~/.minecraft/mmc/MultiMC'
 
-setsid wal -r
+(cat ~/.cache/wal/sequences &)
+/usr/bin/setxkbmap -option "caps:swapescape"
 
-eval `keychain --eval --noask --timeout 60 id_rsa` > /dev/null
+# eval `keychain --eval --noask --timeout 60 id_rsa` > /dev/null
