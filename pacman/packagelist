@@ -24,6 +24,7 @@ btrfs-progs
 bzip2
 cdrtools
 cifs-utils
+composer
 coreutils
 crda
 cryfs
@@ -150,6 +151,7 @@ networkmanager
 networkmanager-openvpn
 networkmanager-pptp
 nfs-utils
+nginx
 nilfs-utils
 nmap
 npm
@@ -169,6 +171,8 @@ patch
 pavucontrol
 pciutils
 perl
+php
+php-fpm
 pkgconf
 pkgfile
 polari
@@ -184,6 +188,7 @@ python-pysmbc
 python2-gnomekeyring
 qt5-styleplugins
 qt5ct
+r
 ranger
 redshift
 reflector
