@@ -55,6 +55,7 @@ flex
 gawk
 gcc
 gcc-libs
+gdmap
 gedit
 gettext
 git
@@ -111,6 +112,7 @@ i3blocks
 i3lock
 i3status
 inetutils
+inkscape
 intel-ucode
 iproute2
 iputils
@@ -137,6 +139,7 @@ m4
 make
 man-db
 man-pages
+mariadb
 mdadm
 mesa
 mesa-vdpau
@@ -173,6 +176,7 @@ pciutils
 perl
 php
 php-fpm
+phpmyadmin
 pkgconf
 pkgfile
 polari
@@ -182,6 +186,7 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
 python-gobject
+python-lxml
 python-pip
 python-pyqt5
 python-pysmbc
