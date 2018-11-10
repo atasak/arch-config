@@ -19,6 +19,7 @@ binutils
 bison
 bluez
 bluez-utils
+bolt
 brasero
 btrfs-progs
 bzip2
@@ -26,6 +27,7 @@ cdrtools
 cifs-utils
 composer
 coreutils
+cowsay
 crda
 cryfs
 cryptsetup
@@ -58,8 +60,11 @@ gcc-libs
 gdmap
 gedit
 gettext
+ghc-libs
 git
+gjs
 glibc
+gmime3
 gnome-backgrounds
 gnome-bluetooth
 gnome-calculator
@@ -85,6 +90,7 @@ gnome-terminal
 gnome-themes-extra
 gnome-tweaks
 gnome-weather
+gobject-introspection-runtime
 google-chrome
 gparted
 grep
@@ -125,6 +131,10 @@ less
 lib32-mesa
 libdvdcss
 libgnome-keyring
+libnm
+libnm-glib
+libnm-gtk
+libnma
 libtool
 libva-intel-driver
 licenses
@@ -156,6 +166,7 @@ networkmanager-pptp
 nfs-utils
 nginx
 nilfs-utils
+nm-connection-editor
 nmap
 npm
 ntfs-3g
@@ -180,6 +191,7 @@ phpmyadmin
 pkgconf
 pkgfile
 polari
+postman
 procps-ng
 psmisc
 pulseaudio
@@ -230,6 +242,7 @@ unrar
 unzip
 upower
 usb_modeswitch
+usbmuxd
 usbutils
 util-linux
 vi

@@ -29,7 +29,7 @@ filetype plugin indent on    " required
 " Basic editor settings
 set cpoptions+=$
 set virtualedit=all
-set wildmenu
+set wildmenu                                              
 " Display linenumbers
 set relativenumber
 set number
