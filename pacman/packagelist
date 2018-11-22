@@ -168,6 +168,9 @@ nginx
 nilfs-utils
 nm-connection-editor
 nmap
+node-gyp
+nodejs
+npm
 ntfs-3g
 numix-frost-themes
 numix-icon-theme
@@ -212,6 +215,7 @@ s-nail
 screenfetch
 seahorse
 sed
+semver
 shadow
 signal
 splix
