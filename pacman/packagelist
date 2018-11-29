@@ -153,6 +153,7 @@ mariadb
 mdadm
 mesa
 mesa-vdpau
+minted
 mlocate
 modemmanager
 nano
@@ -198,6 +199,7 @@ psmisc
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
+pygmentize
 python-gobject
 python-lxml
 python-pip
