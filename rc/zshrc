@@ -209,6 +209,9 @@ alias f='fg'
 alias please='sudo !!'
 alias minecraft='~/.minecraft/mmc/MultiMC'
 
+### Eclipse setup
+export PATH="/home/niek/.eclipse:$PATH"
+
 (cat ~/.cache/wal/sequences &)
 /usr/bin/setxkbmap -option "caps:swapescape"
 
