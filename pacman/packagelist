@@ -206,6 +206,7 @@ python-pip
 python-pyqt5
 python-pysmbc
 python2-gnomekeyring
+python36
 qt5-styleplugins
 qt5ct
 r
