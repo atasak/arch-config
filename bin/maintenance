@@ -14,11 +14,11 @@ echo "Backing up installed packges..."
 ~/projects/.home/arch/pacman/backup
 
 # Update with pacman
-sudo pacman -Syu
+trizen -Syu
 # Autoremove with pacman
-sudo pacman -Rns $(sudo pacman -Qtdq)
+trizen -Rns $(sudo pacman -Qtdq)
 # Clear pacman cache
-sudo pacman -Scc
+trizen -Scc
 
 # Push newest versions of scripts and configs to github
 cd ~/projects/.home/arch && git add . && git commit -m "Maintenance of `date`" && git push
