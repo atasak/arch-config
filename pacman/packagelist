@@ -8,8 +8,11 @@ antergos-keyring
 antergos-midnight-timers
 antergos-mirrorlist
 antergos-wallpapers
+arduino
 autoconf
 automake
+avr-gcc
+avr-gdb
 b43-fwcutter
 baobab
 bash
