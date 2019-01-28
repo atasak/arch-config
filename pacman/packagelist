@@ -9,6 +9,7 @@ antergos-midnight-timers
 antergos-mirrorlist
 antergos-wallpapers
 arduino
+arduino-avr-core
 autoconf
 automake
 avr-gcc
@@ -173,7 +174,6 @@ nilfs-utils
 nm-connection-editor
 nmap
 node-gyp
-nodejs
 npm
 ntfs-3g
 numix-frost-themes
