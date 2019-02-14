@@ -238,9 +238,12 @@ tar
 terminus-font
 texinfo
 texlive-bibtexextra
+texlive-fontsextra
 texlive-formatsextra
 texlive-langextra
 texlive-latexextra
+texlive-pgfopts
+texlive-pictures
 texlive-science
 totem
 transmission-gtk
