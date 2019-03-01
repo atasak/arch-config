@@ -45,6 +45,7 @@ diffutils
 dmenu
 dmraid
 dosfstools
+dtrx
 e2fsprogs
 efibootmgr
 eog
