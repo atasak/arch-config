@@ -281,7 +281,6 @@ xorg-font-util
 xorg-fonts-encodings
 xorg-iceauth
 xorg-luit
-xorg-mkfontdir
 xorg-mkfontscale
 xorg-server
 xorg-sessreg
