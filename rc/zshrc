@@ -207,7 +207,7 @@ export PATH="$CLEAN_HOME/bin:$PATH"
 alias pdf='zathura'
 alias f='fg'
 alias please='sudo !!'
-alias minecraft='~/.minecraft/mmc/MultiMC'
+alias minecraft='java -jar ~/.minecraft/magic.jar'
 
 ### Eclipse setup
 export PATH="/home/niek/.eclipse:$PATH"
