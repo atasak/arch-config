@@ -238,6 +238,7 @@ system-config-printer
 systemd
 systemd-sysvcompat
 tar
+telegram-desktop
 terminus-font
 texinfo
 texlive-bibtexextra
