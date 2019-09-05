@@ -35,6 +35,7 @@ cowsay
 crda
 cryfs
 cryptsetup
+cuda
 cups
 cups-pk-helper
 dconf-editor
@@ -58,6 +59,7 @@ file
 file-roller
 filesystem
 findutils
+flameshot
 flex
 gawk
 gcc
@@ -183,6 +185,7 @@ ntfs-3g
 numix-frost-themes
 numix-icon-theme
 numix-icon-theme-square
+nvidia
 openssh
 openttd
 os-prober
@@ -223,6 +226,7 @@ reflector
 reiserfsprogs
 rsync
 s-nail
+sac-compiler-weekly
 screenfetch
 seahorse
 sed
