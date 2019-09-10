@@ -29,13 +29,13 @@ btrfs-progs
 bzip2
 cdrtools
 cifs-utils
+cmake
 composer
 coreutils
 cowsay
 crda
 cryfs
 cryptsetup
-cuda
 cups
 cups-pk-helper
 dconf-editor
@@ -226,7 +226,6 @@ reflector
 reiserfsprogs
 rsync
 s-nail
-sac-compiler-weekly
 screenfetch
 seahorse
 sed
