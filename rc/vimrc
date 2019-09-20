@@ -1,3 +1,6 @@
+" Pathogen for pathogen only plugins
+execute pathogen#infect()
+
 " Basic runtime settings
 set nocompatible
 syntax on

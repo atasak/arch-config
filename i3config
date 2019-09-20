@@ -19,9 +19,6 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono, Ionicons 8
 
-# Run background script
-exec (/etc/theming/scripts/background.sh &)
-
 hide_edge_borders both
 focus_follows_mouse no
 
@@ -70,7 +67,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # start qutebrowser
-bindsym $mod+b exec qutebrowser
+bindsym $mod+b exec google-chrome
 
 # start webstorm
 bindsym $mod+n exec webstorm
@@ -186,3 +183,37 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 bindsym XF86KbdBrightnessUp exec tee /sys/class/leds/asus::kbd_backlight/brightness <<< 3
 bindsym XF86KbdBrightnessDown exec tee /sys/class/leds/asus::kbd_backlight/brightness <<< 0
+
+# multiple monitor setup
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output primary
+workspace 6 output primary
+workspace 7 output primary
+workspace 8 output primary
+workspace 9 output HDMI-1
+workspace 10 output HDMI-1
+
+# Move workspace
+bindsym $mod+alt+h move workspace to output left
+bindsym $mod+alt+j move workspace to output down
+bindsym $mod+alt+k move workspace to output up
+bindsym $mod+alt+l move workspace to output right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+alt+Left move workspace to output left
+bindsym $mod+alt+Down move workspace to output down
+bindsym $mod+alt+Up move workspace to output up
+bindsym $mod+alt+Right move workspace to output right
+
+# Run additional desktop initializations:
+# xrandr support hdmi and vga
+exec --no-startup-id xrandr --output HDMI-1 --auto --right-of eDP-1 --output VGA-1 --auto --right-of HDMI-1
+
+# pywal (background)
+exec --no-startup-id (/etc/theming/scripts/background.sh &)
+
+# caps/escape switch
+exec --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
