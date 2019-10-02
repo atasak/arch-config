@@ -2,7 +2,7 @@
 
 # Clean downloads folder
 echo "Cleaning downloads folder..."
-find ~/Downloads/ -type f -mtime +10 -exec rm {} \;
+find ~/Downloads/ -type f -mtime +10 -exec rm -f {} \;
 find ~/Downloads/ -type d -empty -exec rmdir {} \;
 mkdir -p ~/Downloads/
 

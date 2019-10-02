@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set +e
+
 response=$(wget -qO- "https://arc.msn.com/v3/Delivery/Cache?pid=279978&fmt=json&ua=WindowsShellClient&lc=en,en-US&ctry=US")
 status=$?
 
@@ -32,3 +34,5 @@ setImage "1" "lockscreen"
 setImage "2" "greeter"
 # setImage "3" "wallpaper3"
 # setImage "4" "wallpaper4"
+
+exit 0
