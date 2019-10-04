@@ -102,6 +102,7 @@ gnome-weather
 gobject-introspection-runtime
 google-chrome
 gparted
+graphviz
 grep
 grive
 groff
