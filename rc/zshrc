@@ -208,6 +208,7 @@ alias pdf='zathura'
 alias f='fg'
 alias please='sudo !!'
 alias minecraft='java -jar ~/.minecraft/magic.jar'
+alias uppaal='java -jar ~/projects/ru/os/uppaal/uppaal.jar'
 
 ### Eclipse setup
 export PATH="/home/niek/.eclipse:$PATH"
