@@ -22,7 +22,9 @@ trizen -Rns $(sudo pacman -Qtdq)
 trizen -Scc
 # Clear general cache
 echo "Clearing general cache"
-rm -rf /home/niek/.cache/*
+find ~/.cache/ -type f -mtime +10 -exec rm -f {} \;
+find ~/.cache/ -type d -empty -exec rmdir {} \;
+mkdir -p ~/.cache/
 
 # Push newest versions of scripts and configs to github
 cd ~/projects/.home/arch && git add . && git commit -m "Maintenance of `date`" && git push
