@@ -100,6 +100,7 @@ gnome-terminal
 gnome-themes-extra
 gnome-tweaks
 gnome-weather
+gnu-netcat
 gobject-introspection-runtime
 google-chrome
 gparted
@@ -245,6 +246,7 @@ system-config-printer
 systemd
 systemd-sysvcompat
 tar
+tcpflow
 telegram-desktop
 terminus-font
 texinfo
