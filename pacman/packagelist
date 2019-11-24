@@ -123,6 +123,7 @@ gvfs-mtp
 gvfs-smb
 gzip
 haveged
+hdf5
 hicolor-icon-theme
 hplip
 htop
