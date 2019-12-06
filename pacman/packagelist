@@ -39,6 +39,7 @@ cryptsetup
 csv2latex
 cups
 cups-pk-helper
+cvc4
 dconf-editor
 device-mapper
 dhcpcd
@@ -70,6 +71,7 @@ gcc-libs
 gdmap
 gedit
 gettext
+ghc
 ghc-libs
 git
 gjs
@@ -240,6 +242,7 @@ shadow
 signal
 splix
 spotify
+stack
 steam
 steam-fonts
 sudo
