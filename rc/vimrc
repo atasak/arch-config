@@ -25,6 +25,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'SacBase/vim-sac'
+Plugin 'camilstaps/vim-torxakis'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
