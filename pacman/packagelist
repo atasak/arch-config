@@ -45,6 +45,7 @@ device-mapper
 dhcpcd
 dialog
 diffutils
+discord
 dmenu
 dmraid
 dosfstools
@@ -75,6 +76,7 @@ ghc
 ghc-libs
 git
 gjs
+glfw-x11
 glibc
 gmime3
 gnome-backgrounds
@@ -242,7 +244,7 @@ shadow
 signal
 splix
 spotify
-stack
+stack-bin
 steam
 steam-fonts
 sudo
