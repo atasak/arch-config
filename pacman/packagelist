@@ -28,7 +28,7 @@ cpupower
 crda
 cronie
 cryptsetup
-deluge
+deluge-gtk
 device-mapper
 dfc
 dhclient
