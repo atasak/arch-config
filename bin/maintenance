@@ -15,11 +15,11 @@ echo "Backing up installed packges..."
 
 # Update with pacman
 echo "Cleaning pacman orphans and cache"
-pacman -Syu
+sudo pacman -Syu
 # Autoremove with pacman
-pacman -Rns $(sudo pacman -Qtdq)
+sudo pacman -Rns $(sudo pacman -Qtdq)
 # Clear pacman cache
-pacman -Scc
+sudo pacman -Scc
 # Clear general cache
 echo "Clearing general cache"
 find ~/.cache/ -type f -mtime +10 -exec rm -f {} \;
