@@ -1,1 +1,0 @@
-find . -type f -not \( -name "IMG*WA*" -o -name "VID*WA*" \) -exec rm {} \;

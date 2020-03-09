@@ -1,1 +1,1 @@
-pacman -Qqe > ~/projects/.home/arch/pacman/packagelist
+pacman -Qqe > ~/.confighome/pacman/packagelist

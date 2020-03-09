@@ -1,3 +1,0 @@
-KRB5_CONFIG=/home/niek/.config/surfsara.krb5.conf 
-kinit rubd12@CUA.SURFSARA.NL
-firefox -P bigdata
