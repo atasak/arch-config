@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p benchmarks
+cargo build --release
+perf record -g --call-graph dwarf,16384 -e cpu-clock -F 997 ../target/release/mcgen
+perf script | stackcollapse-perf.pl | stackcollapse-recursive.pl | c++filt | rust-unmangle | flamegraph.pl > benchmarks/flame.svg

@@ -35,6 +35,7 @@ dhclient
 dhcpcd
 dialog
 diffutils
+discord
 dmidecode
 dmraid
 dnsmasq
@@ -55,12 +56,14 @@ filesystem
 findutils
 firefox
 flac
+flamegraph
 flex
 gawk
 gcc
 gcc-libs
 gcolor2
 gconf
+gedit
 gettext
 git
 glibc
@@ -140,6 +143,7 @@ mesa-demos
 mesa-vdpau
 mhwd
 mhwd-db
+minecraft-launcher
 mkinitcpio-openswap
 mlocate
 mobile-broadband-provider-info
@@ -174,6 +178,7 @@ patch
 patchutils
 pciutils
 pcmanfm
+perf
 perl
 perl-file-mimeinfo
 php-fpm
@@ -194,6 +199,7 @@ rclone
 redshift
 reiserfsprogs
 rsync
+rust
 s-nail
 sbxkb
 screenfetch
@@ -203,6 +209,7 @@ signal-desktop
 snapd
 spectre-meltdown-checker
 speedtest-cli
+sshfs
 stack
 steam-manjaro
 subversion
@@ -225,6 +232,7 @@ texlive-pictures
 texlive-science
 tlp
 tree
+trizen
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
