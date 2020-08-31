@@ -34,25 +34,21 @@ export KEYTIMEOUT=1
 # setopt NOHUP
 # setopt NOTIFY
 # setopt NO_FLOW_CONTROL
+setopt nocaseglob
+setopt numericglobsort
+setopt nobeep
+setopt appendhistory
+setopt histignorealldups
 setopt INC_APPEND_HISTORY SHARE_HISTORY
-setopt APPEND_HISTORY
-# setopt AUTO_LIST
-# setopt AUTO_REMOVE_SLASH
-# setopt AUTO_RESUME
-unsetopt BG_NICE
-setopt CORRECT
-setopt EXTENDED_HISTORY
-# setopt HASH_CMDS
-setopt MENUCOMPLETE
-setopt ALL_EXPORT
-
-### Set/unset  shell options
-############################
 setopt   notify globdots correct pushdtohome cdablevars autolist
 setopt   correctall autocd recexact longlistjobs
 setopt   autoresume histignoredups pushdsilent 
 setopt   autopushd pushdminus extendedglob rcquotes mailwarning
 unsetopt bgnice autoparamslash
+
+
+
+
 
 ### Autoload zsh modules when they are referenced
 #################################################
@@ -195,30 +191,16 @@ zstyle '*' single-ignored show
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### PATH exports
-export PATH="/home/niek/.anaconda/bin:$PATH"
 export PATH="/home/niek/.bin:$PATH"
-export PATH="/home/niek/projects/ru/bd/bigdata-blog-2018-atasak/src/docker-utils/commands/:$PATH"
-
-### Clean setup
-export CLEAN_HOME="/home/niek/.clean"
-export PATH="$CLEAN_HOME/bin:$PATH"
 
 ### Aliases
-alias pdf='zathura'
 alias f='fg'
-alias please='sudo !!'
-alias minecraft='java -jar ~/.minecraft/magic.jar'
-alias uppaal='java -jar ~/projects/ru/os/uppaal/uppaal.jar'
 
-### Eclipse setup
-export PATH="/home/niek/.eclipse:$PATH"
-
-(cat ~/.cache/wal/sequences &)
-/usr/bin/setxkbmap -option "caps:swapescape"
+### Pywal setup
+#(cat ~/.cache/wal/sequences &)
+#/usr/bin/setxkbmap -option "caps:swapescape"
 
 ### Export editor
 VISUAL=vim
 export VISUAL EDITOR=vim
 export EDITOR
-
-# eval `keychain --eval --noask --timeout 60 id_rsa` > /dev/null

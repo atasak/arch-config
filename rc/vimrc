@@ -92,7 +92,7 @@ set dir+=/tmp
 map <F4> @:<CR>
 
 " NerdTree git setup
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "~",
     \ "Staged"    : ">",
     \ "Untracked" : "<",
@@ -104,7 +104,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : ',',
     \ "Unknown"   : "?"
     \ }
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 
 " YouCompleteMe settings
 let g:SuperTabDefaultCompletionType = 'context'
