@@ -1,8 +1,10 @@
 #!/bin/bash
 
-cp /etc/theming/img/wallpaper.png /etc/theming/img/lockscreen.png
-convert /etc/theming/img/wallpaper.jpg /etc/theming/img/wallpaper.png
-wal -i /etc/theming/img/wallpaper.png -n
-feh --bg-fill /etc/theming/img/wallpaper.jpg
+DIR=$1
 
-/etc/theming/telegram/telegram-palette-gen --wal
+cp $DIR/img/wallpaper.png $DIR/img/lockscreen.png
+convert $DIR/img/wallpaper.jpg $DIR/img/wallpaper.png
+wal -i $DIR/img/wallpaper.png -n --saturate 0.8
+feh --bg-fill $DIR/img/wallpaper.jpg
+
+$DIR/telegram/telegram-palette-gen --wal

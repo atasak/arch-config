@@ -1,5 +1,15 @@
 #! /bin/bash
 
+DIR=$1
+
+# Wait for internet
+
+while ! ping -c 1 -W 1 8.8.8.8; do
+    sleep 1
+done
+
+# Get images
+
 set +e
 
 response=$(wget -qO- "https://arc.msn.com/v3/Delivery/Cache?pid=279978&fmt=json&ua=WindowsShellClient&lc=en,en-US&ctry=US")
@@ -24,7 +34,7 @@ function setImage
     title=$(jq -r ".ad.title_text.tx" <<< $item)
     searchTerms=$(jq -r ".ad.title_destination_url.u" <<< $item | perl -pe 's/.*?q=(.*?)&.*/\1/' | decodeURL)
 
-    path="/etc/theming/img/$name.jpg"
+    path="$DIR/img/$name.jpg"
 
     wget -qO "$path" "$landscapeUrl"
 }
