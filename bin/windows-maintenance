@@ -1,3 +1,0 @@
-find /home/niek/niekj/Downloads/* -type f -mtime +14 -exec rm {} \;
-find /home/niek/niekj/Downloads/* -depth -empty -type d -exec rmdir {} \;
-

@@ -6,12 +6,9 @@ find ~/tmp/ -type f -mtime +10 -exec rm -f {} \;
 find ~/tmp/ -type d -empty -exec rmdir {} \;
 mkdir -p ~/tmp/
 
-rm -rf ~/.tmp
-mkdir ~/.tmp
-
 # Backup installed packages
 echo "Backing up installed packges..."
-~/.confighome/pacman/backup
+~/.arch-config/pacman/backup
 
 # Update with pacman
 echo "Cleaning pacman orphans and cache"
@@ -27,4 +24,4 @@ find ~/.cache/ -type d -empty -exec rmdir {} \;
 mkdir -p ~/.cache/
 
 # Push newest versions of scripts and configs to github
-cd ~/.confighome && git add . && git commit -m "Maintenance of `date`" && git push
+cd ~/.arch-config && git add . && git commit -m "Maintenance of `date`" && git push

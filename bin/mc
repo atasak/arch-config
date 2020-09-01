@@ -1,3 +1,0 @@
-cd ~/.minecraft
-java -jar $1.jar
-exit
