@@ -39,7 +39,7 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 exec --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
 
 # XRANDR controls
-exec --no-startup-id ~/.id/lvd_specific.sh
+exec --no-startup-id ~/.i3/lvd_specific.sh
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -52,6 +52,9 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
+
+# Reload background
+bindsym $mod+F1 exec ~/.theming/scripts/set_and_fetch.sh
 
 # Spotify controls
 # Previous
@@ -67,18 +70,13 @@ bindsym $mod+F4 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spoti
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-# bindsym $mod+F2 exec palemoon
-# bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F5 exec terminal -e ranger
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym Print --release exec "i3-scrot -d"
+bindsym $mod+Print --release exec "i3-scrot -w"
+bindsym $mod+Shift+Print --release exec "i3-scrot -s"
 
 # focus_follows_mouse no
 
@@ -420,3 +418,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+# Execute wal
+
+exec --no-startup-id ~/.theming/scripts/set_and_fetch.sh
