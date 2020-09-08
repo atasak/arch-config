@@ -1,8 +1,0 @@
-[Unit]
-Description="Start Redshift"
-
-[Service]
-ExecStart=/usr/bin/redshift
-
-[Install]
-WantedBy=multi-user.target

@@ -1,0 +1,40 @@
+#!/bin/python
+
+import platform
+import os
+
+root = "/home/niek/.arch-config/i3/"
+
+fmts = '{:<20} {:<8} {:<8}'
+
+host = platform.node()
+print("Generating i3 configuration for host " + host)
+print("")
+print(fmts.format("Config", "general", "host-specific"))
+
+config = open(root + "config", "w")
+
+
+def config_file(name):
+    name = root + name
+    if os.path.isfile(name):
+        subconfig = open(name, "r")
+        data = subconfig.read()
+        config.write(data)
+        subconfig.close()
+        return "X"
+    else:
+        return ""
+
+
+def config_load(name):
+    general = config_file(name)
+    specific = config_file(name + "." + host)
+    print(fmts.format(name, general, specific))
+
+
+configs = ["priority", "workspaces-screens", "behavior", "keys",
+        "styling"]
+
+for cfile in configs:
+    config_load(cfile)

@@ -1,0 +1,24 @@
+# Set workspaces on display
+workspace $ws1 output DP-0
+workspace $ws2 output DP-0
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
+workspace $ws8 output primary
+workspace $ws9 output primary
+workspace $ws0 output primary
+
+# Default application workspaces
+
+assign [class="firefox"] $ws1
+assign [class="discord"] $ws1
+
+assign [class="jetbrains-clion"] $ws3
+assign [class="jetbrains-idea"] $ws3
+assign [class="jetbrains-phpstorm"] $ws3
+assign [class="jetbrains-pycharm"] $ws3
+
+assign [class="dibidabidab"] $ws9
+assign [class="Spotify"] $ws0

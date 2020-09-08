@@ -1,8 +1,0 @@
-[Unit]
-Description=Update Windows spotlight Theme
-
-[Timer]
-OnBootSec=5min
-
-[Install]
-WantedBy=multi-user.target

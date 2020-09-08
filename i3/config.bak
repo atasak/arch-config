@@ -7,15 +7,12 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
-default_floating_border normal
 
 set_from_resource $bg i3wm.color0
 set_from_resource $fg i3wm.color1
 set_from_resource $ac i3wm.color6
 
-# Hide borders
+# Borders
 hide_edge_borders none
 focus_follows_mouse no
 
@@ -78,9 +75,12 @@ bindsym $mod+F5 exec terminal -e ranger
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print --release exec "i3-scrot -d"
-bindsym $mod+Print --release exec "i3-scrot -w"
-bindsym $mod+Shift+Print --release exec "i3-scrot -s"
+bindsym Print --release exec "~/.bin/scrotclip -w"
+bindsym $mod+Print --release exec "~/.bin/scrotclip -d"
+bindsym Mod1+Sys_Req --release exec "~/.bin/scrotclip -s"
+bindsym Shift+Print --release exec "~/.bin/scrotclip -w 4"
+bindsym $mod+Shift+Print --release exec "~/.bin/scrotclip -d 4"
+bindsym Mod1+Shift+Sys_Req --release exec "~/.bin/scrotclip -s 4"
 
 # focus_follows_mouse no
 
@@ -200,8 +200,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 
 # Set workspaces on display
-workspace 1 output DP-1
-workspace 2 output DP-1
+workspace 1 output DP-0
+workspace 2 output DP-0
 workspace 3 output primary
 workspace 4 output primary
 workspace 5 output primary
@@ -379,11 +379,11 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps off
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+# smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner

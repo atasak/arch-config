@@ -1,0 +1,2 @@
+# Set volume to 100%
+exec --no-startup-id amixer set Master 100%

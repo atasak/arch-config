@@ -1,0 +1,4 @@
+#!/bin/bash
+
+i3-scrot $1 $2
+xclip -sel clip -t image/png -i ~/tmp/`ls -t ~/tmp | head -1`

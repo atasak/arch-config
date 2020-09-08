@@ -1,0 +1,84 @@
+# Directly start programs
+bindsym $mod+Return exec terminal
+
+# Other keybindings
+bindsym $mod+q kill
+bindsym $mod+d exec --no-startup-id dmenu_recency
+
+# F-keybindings
+# Media controls
+bindsym XF86AudioPrev exec playerctl prev
+# Untested!
+bindsym XF86AudioPlayPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym $mod+F2 exec playerctl prev
+bindsym $mod+F3 exec playerctl play-pause
+bindsym $mod+F4 exec playerctl next
+
+# Screen brightness controls
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym $mod+F5 exec xbacklight -dec 10
+bindsym $mod+F6 exec xbacklight -inc 10
+
+# Audio controls
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
+bindsym $mod+F9 exec --no-startup-id amixer set Master toggle
+bindsym $mod+F10 exec --no-startup-id amixer set Master 5%-
+bindsym $mod+F11 exec --no-startup-id amixer set Master 5%+
+
+# Screenshot possibilities
+bindsym Print --release exec "~/.bin/scrotclip -w"
+bindsym $mod+Print --release exec "~/.bin/scrotclip -d"
+bindsym Mod1+Sys_Req --release exec "~/.bin/scrotclip -s"
+bindsym Shift+Print --release exec "~/.bin/scrotclip -w 4"
+bindsym $mod+Shift+Print --release exec "~/.bin/scrotclip -d 4"
+bindsym Mod1+Shift+Sys_Req --release exec "~/.bin/scrotclip -s 4"
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r exec --no-startup-id gen-i3-config; restart
+
+# Set shut down, restart and locking features
+bindsym $mod+F12 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (h)ibernate, (r)eboot, (s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Lock screen
+bindsym $mod+z exec --no-startup-id blurlock

@@ -1,0 +1,2 @@
+# Set screen outputs and positions
+exec --no-startup-id xrandr --output HDMI-0 --auto --primary --output DP-0 --auto --left-of HDMI-0

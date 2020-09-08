@@ -1,0 +1,95 @@
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+default_border pixel 4
+default_floating_border normal
+hide_edge_borders none
+
+# Load pywal colors
+set_from_resource $bg i3wm.color0
+set_from_resource $fg i3wm.color1
+set_from_resource $ac i3wm.color6
+
+# Run pywal scripts
+bindsym $mod+F1 exec ~/.theming/scripts/set_and_fetch.sh
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+bar {
+	i3bar_command i3bar
+	status_command i3status
+	position top
+    mode hide
+    hidden_state hide
+    modifier $mod
+
+    tray_output primary
+
+	bindsym button4 nop
+	bindsym button5 nop
+	strip_workspace_numbers yes
+
+    colors {
+        background $bg
+        statusline $fg
+        separator  $ac
+
+#                      border  backgr. text
+        focused_workspace  $bg $bg $fg
+        active_workspace   $bg $bg $fg
+        inactive_workspace $bg $bg $fg
+        binding_mode       $bg $bg $fg
+        urgent_workspace   $bg $bg $fg
+    }
+}
+
+# Theme colors
+# class                   border  backgr. text    indic.   child_border
+  client.focused          $fg     $fg     $bg  $fg       $fg
+  client.focused_inactive $bg     $bg     $fg  $bg       $bg
+  client.unfocused        $bg     $bg     $fg  $bg       $bg
+  client.urgent           $bg     $bg     $fg  $bg       $bg
+  client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+  client.background       $bg
+
+# i3-gaps
+# Set inner/outer gaps
+gaps inner 14
+gaps outer -2
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Execute wal
+exec --no-startup-id ~/.theming/scripts/set_and_fetch.sh
