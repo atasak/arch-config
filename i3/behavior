@@ -1,3 +1,6 @@
+# Setup polybar
+exec --no-startup-id /home/niek/.bin/launch-polybar
+
 # i3 options
 focus_follows_mouse no
 
@@ -16,3 +19,4 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+

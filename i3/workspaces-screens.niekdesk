@@ -15,6 +15,8 @@ workspace $ws0 output primary
 assign [class="firefox"] $ws1
 assign [class="discord"] $ws1
 
+assign [class="signal"] $ws2
+
 assign [class="jetbrains-clion"] $ws3
 assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-phpstorm"] $ws3
