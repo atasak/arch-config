@@ -3,11 +3,16 @@
 import os
 import datetime
 import math
+import sys
 
 schedulefile = "/run/systemd/shutdown/scheduled"
 
 if not os.path.isfile(schedulefile):
     print("")
+    exit(0)
+
+if len(sys.argv) > 1:
+    print (sys.argv[1])
     exit(0)
 
 sfile = open(schedulefile, "r")
@@ -25,6 +30,6 @@ hours = math.floor(tdelta.seconds / 3600)
 minutes = math.floor((tdelta.seconds / 60) % 60)
 seconds = math.floor(tdelta.seconds % 60)
 if hours > 0:
-    print('{} - {:02d}:{:02d}:{:02d}'.format(map['MODE'], hours, minutes, seconds))
+    print('{} in {:02d}:{:02d}:{:02d}'.format(map['MODE'], hours, minutes, seconds))
 else:
-    print('{} - {:02d}:{:02d}'.format(map['MODE'], minutes, seconds))
+    print('{} in {:02d}:{:02d}'.format(map['MODE'], minutes, seconds))

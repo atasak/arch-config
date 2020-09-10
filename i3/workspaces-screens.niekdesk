@@ -1,14 +1,29 @@
+#Monitors
+set $left DP-0
+set $right DVI-D-0
+set $primary HDMI-0
+
 # Set workspaces on display
 workspace $ws1 output DP-0
 workspace $ws2 output DP-0
-workspace $ws3 output primary
-workspace $ws4 output primary
-workspace $ws5 output primary
-workspace $ws6 output primary
-workspace $ws7 output primary
-workspace $ws8 output primary
-workspace $ws9 output primary
-workspace $ws0 output primary
+workspace $ws3 output HDMI-0
+workspace $ws4 output HDMI-0
+workspace $ws5 output HDMI-0
+workspace $ws6 output HDMI-0
+workspace $ws7 output HDMI-0
+workspace $ws8 output HDMI-0
+workspace $ws9 output DVI-D-0
+workspace $ws0 output DVI-D-0
+workspace $ws1 output DP-0
+workspace $ws2 output DP-0
+workspace $ws3 output HDMI-0
+workspace $ws4 output HDMI-0
+workspace $ws5 output HDMI-0
+workspace $ws6 output HDMI-0
+workspace $ws7 output HDMI-0
+workspace $ws8 output HDMI-0
+workspace $ws9 output DVI-D-0
+workspace $ws0 output DVI-D-0
 
 # Default application workspaces
 

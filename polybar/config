@@ -50,10 +50,12 @@ module-margin-right = 0
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
+font-3 = mplus Nerd Font:size=17
+font-4 = Agave Nerd Font:size=60
 
-modules-left = margin i3 margin-sm spotify margin-sm left-end
-modules-center= shutdown
-modules-right = right-start margin-sm filesystem-home margin filesystem margin memory margin cpu margin temperature margin eth wlan margin battery margin date margin time margin
+modules-left = margin i3 left-end left-start margin-sm spotify margin-sm left-end
+modules-center= right-start-sd margin-sm-sd shutdown margin-sm-sd left-end-sd
+modules-right = right-start margin-sm filesystem-home margin-home filesystem margin memory margin cpu margin temperature margin-sm right-end right-start margin-sm eth wlan margin battery margin-bt date margin time margin
 
 ;tray-position = right
 ;tray-padding = 4
@@ -91,6 +93,7 @@ mount-0 = /home
 
 format-mounted-background = ${colors.background}
 label-mounted = %percentage_used:02%% / %total%
+label-unmounted=
 
 
 [module/i3]
@@ -232,40 +235,81 @@ exec = /home/niek/.arch-config/polybar/shutdown-status.py
 
 [module/decor-glyph]
 type = custom/text
-content-background = ${colors.background}
+content-background = #00000000
 content-foreground = ${colors.background}
+content-font = 4
+content-padding = 0
+content-margin = 0
+
+[module/mg]
+type = custom/text
+content-background = ${colors.background}
 
 [module/margin]
-inherit = module/decor-glyph
+inherit = module/mg
 content = "      "
 
 [module/margin-sm]
-inherit = module/decor-glyph
-content = "  "
+inherit = module/mg
+content = "    "
 
 [module/left-start]
 inherit = module/decor-glyph
-;content = ◢
-content-font = "Roboto:pixelsize=11;1"
-content = "%{T4}%{T-}"
+content = 
 
 [module/left-end]
 inherit = module/decor-glyph
-;content = ◤
-content-font = "Roboto:pixelsize=11;1"
-content = "%{T4}%{T-}"
+content = 
 
 [module/right-start]
 inherit = module/decor-glyph
-;content = ◥
-content-font = "unicode:fontformat=truetype:size=8:antialias=false;0"
-content = "%{T4}%{T-}"
+content = 
 
 [module/right-end]
 inherit = module/decor-glyph
-;content = ◣
-content-font = "Roboto:pixelsize=11;1"
-content = "%{T4}%{T-}"
+content = 
+
+[module/left-end-sd]
+inherit = module/decor-glyph
+type = custom/script
+interval = 1
+format-background = #00000000
+format-foreground = ${colors.background}
+format = <label>
+exec = /home/niek/.arch-config/polybar/shutdown-status.py ""
+
+[module/right-start-sd]
+inherit = module/decor-glyph
+type = custom/script
+interval = 1
+format-background = #00000000
+format-foreground = ${colors.background}
+format = <label>
+exec = /home/niek/.arch-config/polybar/shutdown-status.py ""
+
+[module/margin-sm-sd]
+inherit = module/mg
+type = custom/script
+interval = 1
+format-background = ${colors.background}
+format = <label>
+exec = /home/niek/.arch-config/polybar/shutdown-status.py "    "
+
+[module/margin-home]
+inherit = module/mg
+type = custom/script
+interval = 1
+format-background = ${colors.background}
+format = <label>
+exec = /home/niek/.arch-config/polybar/is-mounted /home "    "
+
+[module/margin-bt]
+inherit = module/mg
+type = custom/script
+interval = 1
+format-background = ${colors.background}
+format = <label>
+exec = /home/niek/.arch-config/polybar/battery-exists "    "
 
 [settings]
 screenchange-reload = true
