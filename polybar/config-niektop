@@ -1,0 +1,7 @@
+[global/wm]
+include-file = config-base
+
+[bar/niektop]
+modules-left = margin i3 margin-sm filesystem margin memory margin cpu margin temperature margin-sm left-end
+modules-center=
+modules-right = right-start margin-sm wlan margin battery margin date margin time margin
