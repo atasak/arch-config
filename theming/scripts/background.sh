@@ -5,7 +5,7 @@ DIR=$1
 cp $DIR/img/wallpaper.png $DIR/img/lockscreen.png
 convert $DIR/img/wallpaper.jpg $DIR/img/wallpaper.png
 wal -c
-wal -i $DIR/img/wallpaper.png -n --saturate 0.8
+wal -i $DIR/img/wallpaper.png -n --saturate 0.6
 
 echo "Setting wallpapers"
 feh --bg-fill $DIR/img/wallpaper.jpg
@@ -23,3 +23,7 @@ echo "Updating discord colors"
 $DIR/wal-discord/wal-discord
 echo "a"
 beautifuldiscord --css ~/.cache/wal-discord/style.css
+
+echo "Reload dunst"
+killall dunst
+notify-send "OS colors set"
