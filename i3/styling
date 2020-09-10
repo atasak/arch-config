@@ -88,5 +88,3 @@ mode "$mode_gaps_outer" {
 
 # Execute wal
 exec --no-startup-id ~/.theming/scripts/set_and_fetch.sh
-
-for_window [class="polybar"] floating enable
