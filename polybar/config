@@ -25,7 +25,7 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color3:#222}
 alert = #${xrdb:color7}
 
-[bar/base]
+[bar/thebar]
 enable-ipc = true
 monitor = ${env:MONITOR:HDMI-0}
 width = 100%
@@ -142,7 +142,7 @@ label = %percentage:02%%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = net1
 interval = 3.0
 
 format-connected-background = ${colors.background}
