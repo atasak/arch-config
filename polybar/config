@@ -18,12 +18,10 @@
 
 [colors]
 background = ${xrdb:color0:#222}
-background-alt = ${xrdb:color0:#222}
 foreground = ${xrdb:color2:#222}
-foreground-alt = ${xrdb:color3:#222}
+background-alert = ${xrdb:color7:#222}
+foreground-alert = ${xrdb:color3:#222}
 primary = ${xrdb:color1:#222}
-secondary = ${xrdb:color3:#222}
-alert = #${xrdb:color7}
 
 [bar/thebar]
 enable-ipc = true
@@ -39,7 +37,6 @@ background = #00000000
 foreground = ${colors.foreground}
 
 line-size = 4
-line-color = ${colors.secondary}
 
 border-size = 0
 border-color = #00000000
@@ -55,8 +52,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = margin i3 margin-sm spotify margin-sm left-end
-modules-center=
-modules-right = right-start margin-sm filesystem margin memory margin cpu margin temperature margin eth wlan battery margin date margin time margin
+modules-center= shutdown
+modules-right = right-start margin-sm filesystem-home margin filesystem margin memory margin cpu margin temperature margin eth wlan margin battery margin date margin time margin
 
 ;tray-position = right
 ;tray-padding = 4
@@ -85,8 +82,16 @@ mount-0 = /
 
 format-mounted-background = ${colors.background}
 label-mounted = %percentage_used:02%% / %total%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/filesystem-home]
+type = internal/fs
+interval = 25
+
+mount-0 = /home
+
+format-mounted-background = ${colors.background}
+label-mounted = %percentage_used:02%% / %total%
+
 
 [module/i3]
 type = internal/i3
@@ -104,7 +109,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
 label-focused-underline= ${colors.primary}
 label-focused-overline= ${colors.primary}
 label-focused-padding = ${self.label-mode-padding}
@@ -121,8 +126,9 @@ label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = !%index%!
-label-urgent-background = ${colors.alert}
+label-urgent = %index%
+label-urgent-background = ${colors.background-alert}
+label-urgent-foreground = ${colors.foreground-alert}
 label-urgent-padding = ${self.label-mode-padding}
 
 ; Separator in between workspaces
@@ -142,41 +148,19 @@ label = %percentage:02%%
 
 [module/wlan]
 type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected-background = ${colors.background}
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid% : %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+interface = wlp2s0
+inherit = module/lan
 
 [module/eth]
 type = internal/network
 interface = enp0s31f6
+inherit = module/lan
+
+[module/lan]
 interval = 3.0
 
 format-connected-background = ${colors.background}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -203,52 +187,33 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
+interval = 5
+time-format = %H:%M
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full = <label-full>
+format-charging-background = ${colors.background}
+format-discharging-background = ${colors.background}
+format-full-background = ${colors.background}
+label-charging = chr: %percentage%%
+label-discharging = %time% - %percentage%%
+label-full = full
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${colors.alert}
+format-foreground = ${colors.foreground}
+format-warn-foreground = ${colors.foreground-alert}
 format-background = ${colors.background}
+format-warn-background = ${colors.background-alert}
+format = <label>
+format-warn = <label-warn>
 
 label = %temperature-c:02%
 label-warn = %temperature-c:02%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/spotify]
 type = custom/script
@@ -257,6 +222,13 @@ format = <label>
 format-background = ${colors.background}
 exec = python /home/niek/.arch-config/polybar/spotify_status.py -t 100 -f '{artist} - {song}'
 
+[module/shutdown]
+type = custom/script
+interval = 1
+format = <label>
+format-foreground = ${colors.primary}
+format-background = ${colors.background}
+exec = /home/niek/.arch-config/polybar/shutdown-status.py
 
 [module/decor-glyph]
 type = custom/text

@@ -11,3 +11,33 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 focus_follows_mouse no
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+#bar {
+#	i3bar_command i3bar
+#	status_command i3status
+#	position top
+#    mode hide
+#    hidden_state hide
+#    modifier $mod
+#
+#    tray_output primary
+#
+#	bindsym button4 nop
+#	bindsym button5 nop
+#	strip_workspace_numbers yes
+#
+#    colors {
+#        background $bg
+#        statusline $fg
+#        separator  $ac
+#
+##                      border  backgr. text
+#        focused_workspace  $bg $bg $fg
+#        active_workspace   $bg $bg $fg
+#        inactive_workspace $bg $bg $fg
+#        binding_mode       $bg $bg $fg
+#        urgent_workspace   $bg $bg $fg
+#    }
+#}
+

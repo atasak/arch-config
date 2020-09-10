@@ -8,7 +8,7 @@ workspace $ws6 output primary
 workspace $ws7 output primary
 workspace $ws8 output primary
 workspace $ws9 output HDMI1
-workspace $ws0 output HDMK1
+workspace $ws0 output HDMI1
 
 # Default application workspaces
 
@@ -21,4 +21,4 @@ assign [class="jetbrains-phpstorm"] $ws3
 assign [class="jetbrains-pycharm"] $ws3
 
 assign [class="dibidabidab"] $ws5
-assign [class="Spotify"] $ws0
+assign [class="Spotify"] $ws2
