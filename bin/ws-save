@@ -1,3 +1,34 @@
 #!/bin/python
 
+import json
+import subprocess
+import sys
 
+WS_FILE = "/tmp/i3-ws-save"
+
+def run(args):
+    process = subprocess.run(args, stdout=supprocess.PIPE)
+    return process.stdout.decode('utf-8')
+
+def writefile (name, contents):
+    file = open(name, "w")
+    file.write(contents)
+    file.close()
+
+def readfile (name):
+    file = open(name, "r")
+    data = file.read()
+    file.close()
+    return data
+
+if sys.argv[1] == "--save":
+    wsinfo = run(['i3-msg', '-t' 'get_workspaces'])
+    writefile (WS_FILE, wsinfo)
+    exit(0)
+
+if sys.argv[1] == "--restore":
+    wsinfo = readfile(WS_FILE)
+    exit(0)
+
+print ("Usage:")
+print ("ws-save --save|--restore")
