@@ -1,0 +1,24 @@
+#!/bin/python
+
+import subprocess
+import sys
+
+if len(sys.argv) < 2:
+    print("switch-audio-device <device>")
+    exit(0)
+
+sink = sys.argv[1]
+
+# Set default sink
+subprocess.run(['pactl', 'set-default-sink', sink])
+
+# Retrieve running applications
+process = subprocess.run(['pactl', 'list', 'short', 'sink-inputs'], 
+        stdout = subprocess.PIPE)
+appls = process.stdout.decode('utf-8')
+
+# Move running applications to new sink
+for appl in appls.split("\n"):
+    id = appl.split("\t")[0]
+    subprocess.run(['pacmd', 'move-sink-input', id, sink])
+

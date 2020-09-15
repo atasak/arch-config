@@ -1,0 +1,3 @@
+# Set audio sink
+bindsym $mod+F7 exec --no-startup-id /home/niek/.bin/switch-audio-device 2
+bindsym $mod+F8 exec --no-startup-id /home/niek/.bin/switch-audio-device 1

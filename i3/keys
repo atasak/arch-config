@@ -25,6 +25,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym $mod+F5 exec xbacklight -dec 10
 bindsym $mod+F6 exec xbacklight -inc 10
 
+# Audio output keys are host-specific
+
 # Audio controls
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
