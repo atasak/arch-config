@@ -19,9 +19,9 @@
 [colors]
 background = ${xrdb:color0:#222}
 foreground = ${xrdb:color2:#222}
-background-alert = ${xrdb:color7:#222}
-foreground-alert = ${xrdb:color3:#222}
 primary = ${xrdb:color1:#222}
+background-alert = ${xrdb:color2:#222}
+foreground-alert = ${xrdb:color0:#222}
 
 [bar/thebar]
 enable-ipc = true
@@ -167,7 +167,7 @@ label-connected = %local_ip%
 
 [module/date]
 type = internal/date
-interval = 100
+interval = 60
 
 date = %d-%m-%Y
 date-alt = %d-%m-%Y
@@ -190,7 +190,7 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-interval = 5
+interval = 10
 time-format = %H:%M
 
 format-charging = <label-charging>
@@ -298,7 +298,7 @@ exec = /home/niek/.arch-config/polybar/shutdown-status.py "    "
 [module/margin-home]
 inherit = module/mg
 type = custom/script
-interval = 1
+interval = 25
 format-background = ${colors.background}
 format = <label>
 exec = /home/niek/.arch-config/polybar/is-mounted /home "    "
@@ -306,7 +306,7 @@ exec = /home/niek/.arch-config/polybar/is-mounted /home "    "
 [module/margin-bt]
 inherit = module/mg
 type = custom/script
-interval = 1
+interval = 10
 format-background = ${colors.background}
 format = <label>
 exec = /home/niek/.arch-config/polybar/battery-exists "    "
