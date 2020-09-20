@@ -17,11 +17,6 @@ sudo pacman -Syu
 sudo pacman -Rns $(sudo pacman -Qtdq)
 # Clear pacman cache
 sudo pacman -Scc
-# Clear general cache
-echo "Clearing general cache"
-find ~/.cache/ -type f -mtime +10 -exec rm -f {} \;
-find ~/.cache/ -type d -empty -exec rmdir {} \;
-mkdir -p ~/.cache/
 
 # Push newest versions of scripts and configs to github
 cd ~/.arch-config && git add . && git commit -m "Maintenance of `date`" && git push
