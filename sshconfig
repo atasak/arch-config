@@ -1,0 +1,4 @@
+Host nieknet
+    Hostname nieknet.nl
+    User niek
+    Port 22
