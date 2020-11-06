@@ -1,0 +1,14 @@
+{
+  "name": "bing-theming",
+  "version": "1.0.0",
+  "description": "Download and set bing daily images",
+  "main": "bing.js",
+  "scripts": {
+    "test": "./bing.js"
+  },
+  "author": "Niek Janssen",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^11.8.0"
+  }
+}
