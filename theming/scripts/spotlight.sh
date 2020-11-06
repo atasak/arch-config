@@ -2,17 +2,13 @@
 
 DIR=$1
 
-# Wait for internet
-
-while ! ping -c 1 -W 1 8.8.8.8; do
-    sleep 1
-done
 
 # Get images
 
 set +e
 
-response=$(wget -qO- "https://arc.msn.com/v3/Delivery/Cache?pid=279978&fmt=json&ua=WindowsShellClient&lc=en,en-US&ctry=US")
+response=$(wget -qO- "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1")
+echo $response
 status=$?
 
 
