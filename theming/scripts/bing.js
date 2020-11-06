@@ -8,8 +8,7 @@ async function main() {
 	const json = JSON.parse(response.body);
 	const imgUrl = `https://bing.com/${json.images[0].url}`;
 	const img = await got(imgUrl);
-	console.log(img.body);
-	fs.writeFileSync(`${process.argv[1]}/img/wallpaper.jpg`, img.body);
+	fs.writeFileSync(`${process.argv[2]}/img/wallpaper.jpg`, img.rawBody);
 }
 
 main();
