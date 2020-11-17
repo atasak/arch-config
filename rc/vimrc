@@ -1,4 +1,5 @@
 " Basic runtime settings
+let mapleader=","
 set nocompatible
 syntax on
 
@@ -23,6 +24,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'SacBase/vim-sac'
 Plugin 'camilstaps/vim-torxakis'
+Plugin 'whonore/Coqtail'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,9 +89,6 @@ set dir+=/tmp
 :command Q  q
 :command Qa qa
 :command QA qa
-
-" Repeat colon (:) command on comma
-map <F4> @:<CR>
 
 " NerdTree git setup
 let g:NERDTreeGitStatusIndicatorMapCustom = {
