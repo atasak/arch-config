@@ -2,3 +2,8 @@ Host nieknet
     Hostname nieknet.nl
     User niek
     Port 22
+
+Host lilo
+    Hostname lilo.science.ru.nl
+    User njanssen
+    Port 22

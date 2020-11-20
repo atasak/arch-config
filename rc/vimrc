@@ -67,7 +67,7 @@ command Make execute "silent !make" | redraw!
 map <F5> :Make<cr>
 
 " Compile pandoc
-command Pdfrun execute "silent !pandoc --filter pandoc-citeproc -o %.pdf %" | redraw!
+command Pdfrun execute "silent !pandoc --citeproc -o %.pdf %" | redraw!
 map <F6> :Pdfrun<CR>
 
 " Word count

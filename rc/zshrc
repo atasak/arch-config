@@ -201,3 +201,5 @@ export EDITOR
 
 ### Use pywal colors
 cat ~/.cache/wal/sequences
+
+export TERM='xterm-color'
