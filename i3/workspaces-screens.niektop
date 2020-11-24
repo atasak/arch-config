@@ -7,8 +7,8 @@ workspace $ws5 output primary
 workspace $ws6 output primary
 workspace $ws7 output primary
 workspace $ws8 output primary
-workspace $ws9 output HDMI1
-workspace $ws0 output HDMI1
+workspace $ws9 output eDP1
+workspace $ws0 output eDP1
 
 # Default application workspaces
 
