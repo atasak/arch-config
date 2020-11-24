@@ -203,3 +203,5 @@ export EDITOR
 cat ~/.cache/wal/sequences
 
 export TERM='xterm-color'
+
+export servermount='sudo sshfs niekserver /home/niek/server'
