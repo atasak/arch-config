@@ -193,6 +193,7 @@ export PATH="/home/niek/.bin:$PATH"
 alias f='fg'
 alias appclass='xprop | grep -i class'
 alias git-playback='gource -c 4 -a 1 -s 1'
+alias disk-inspect='ncdu'
 
 ### Export editor
 VISUAL=vim
