@@ -18,5 +18,8 @@ sudo pacman -Rns $(sudo pacman -Qtdq)
 # Clear pacman cache
 sudo pacman -Scc
 
+# Update oh-my-zsh
+omz update
+
 # Push newest versions of scripts and configs to github
 cd ~/.arch-config && git add . && git commit -m "Maintenance of `date`" && git push
