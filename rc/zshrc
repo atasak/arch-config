@@ -207,6 +207,5 @@ export TERM='xterm-color'
 
 export servermount='sudo sshfs niekserver /home/niek/server'
 
-### Disable OMZ updates, those happen in the maintenance script
+### Disable OMZ update prompts, update without asking
 DISABLE_UPDATE_PROMPT=true
-DISABLE_AUTO_UPDATE=true
