@@ -27,7 +27,6 @@ workspace $ws0 output DVI-D-0
 
 # Default application workspaces
 
-assign [class="firefox"] $ws1
 assign [class="discord"] $ws1
 
 assign [class="signal"] $ws2

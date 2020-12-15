@@ -12,7 +12,6 @@ workspace $ws0 output primary
 
 # Default application workspaces
 
-assign [class="firefox"] $ws1
 assign [class="discord"] $ws0
 
 assign [class="jetbrains-clion"] $ws3
