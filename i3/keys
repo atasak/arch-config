@@ -7,8 +7,7 @@ bindsym $mod --release exec --no-startup-id polybar-msg cmd hide
 
 # Other keybindings
 bindsym $mod+q kill
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop # -nb "$bg" -nf "$fg" -sb "$ac" -sf "$bg"
-
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i"
 # F-keybindings
 # Media controls
 bindsym XF86AudioPrev exec playerctl previous
