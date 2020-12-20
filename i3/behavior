@@ -22,3 +22,6 @@ exec_always --no-startup-id fix_xcursor
 exec --no-startup-id redshift
 
 exec --no-startup-id rmdir ~/Downloads
+
+bindsym --border button1 nop
+bindsym --border button3 nop
