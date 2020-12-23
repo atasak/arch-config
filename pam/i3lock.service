@@ -1,0 +1,8 @@
+[Unit]
+Description=i3lock
+
+[Service]
+User=niek
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/home/niek/.bin/lock

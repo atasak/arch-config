@@ -1,0 +1,2 @@
+ACTION=="remove", ENV{PRODUCT}=="1050/120/524", RUN+="/usr/bin/systemctl start --no-block i3lock.service"
+#/usr/bin/systemctl start --no-block i3lock.service"
