@@ -1,5 +1,5 @@
 #%PAM-1.0
-auth 		sufficient 	pam_u2f.so origin=pam://niektop appid=pam://niektop
+auth 		sufficient 	pam_u2f.so origin=pam://niekdesk appid=pam://niekdesk
 auth		include		system-auth
 account		include		system-auth
 session		include		system-auth

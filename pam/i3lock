@@ -3,5 +3,5 @@
 # the 'system-auth' configuration file (see /etc/pam.d/login)
 #
 
-auth 		sufficient 	pam_u2f.so origin=pam://niektop appid=pam://niektop
+auth 		sufficient 	pam_u2f.so origin=pam://niekdesk appid=pam://niekdesk
 auth include system-auth

@@ -3,6 +3,6 @@
 auth       required     pam_securetty.so
 auth       requisite    pam_nologin.so
 auth       include      system-local-login
-auth 	   required 	pam_u2f.so origin=pam://niektop appid=pam://niektop
+auth 	   required 	pam_u2f.so origin=pam://niekdesk appid=pam://niekdesk
 account    include      system-local-login
 session    include      system-local-login
