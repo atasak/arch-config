@@ -5,11 +5,15 @@
 
 ### Setup Oh my ZSH
 ###################
+
 export ZSH=/home/niek/.oh-my-zsh
 
 plugins=(
   git
 )
+
+### Disable OMZ update prompts, update without asking
+DISABLE_UPDATE_PROMPT=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -206,6 +210,3 @@ cat ~/.cache/wal/sequences
 export TERM='xterm-color'
 
 export servermount='sudo sshfs niekserver /home/niek/server'
-
-### Disable OMZ update prompts, update without asking
-DISABLE_UPDATE_PROMPT=true
