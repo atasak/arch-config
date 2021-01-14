@@ -3,7 +3,7 @@
 # Clean downloads folder
 echo "Cleaning downloads folder..."
 find ~/tmp/ -type f -mtime +4 -exec rm -f {} \;
-find ~/tmp/ -type d -empty -exec rmdir {} \;
+find ~/tmp/ -depth -type d -empty -exec rmdir {} \;
 mkdir -p ~/tmp/
 
 # Backup installed packages
