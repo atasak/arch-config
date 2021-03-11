@@ -210,3 +210,5 @@ cat ~/.cache/wal/sequences
 export TERM='xterm-color'
 
 export servermount='sudo sshfs niekserver /home/niek/server'
+
+eval $(thefuck --alias)
