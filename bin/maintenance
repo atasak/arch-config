@@ -1,10 +1,11 @@
 #! /bin/bash
 
 # Clean downloads folder
-echo "Cleaning downloads folder..."
+echo "Cleaning temporary files..."
 find ~/tmp/ -type f -mtime +4 -exec rm -f {} \;
 find ~/tmp/ -depth -type d -empty -exec rmdir {} \;
 mkdir -p ~/tmp/
+find ~/.cache/i3lock-multimonitor/img/ -type f -mtime +4 -exec rm -f {} \;
 
 # Backup installed packages
 echo "Backing up installed packges..."
