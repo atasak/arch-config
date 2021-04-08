@@ -1,0 +1,3 @@
+#! /bin/bash
+
+astyle -T4A2pxjn $@
