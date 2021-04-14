@@ -7,3 +7,8 @@ Host lilo
     Hostname lilo.science.ru.nl
     User njanssen
     Port 22
+
+Host nijsachosting
+    Hostname nijsac.nl.transurl.nl
+    User nijsac.nl
+    Port 22
