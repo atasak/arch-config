@@ -1,5 +1,5 @@
 # Directly start programs
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # Show/hide polybar
 bindsym $mod exec --no-startup-id polybar-msg cmd show
