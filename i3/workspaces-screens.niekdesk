@@ -36,6 +36,7 @@ assign [class="jetbrains-idea"] $ws3
 assign [class="jetbrains-phpstorm"] $ws3
 assign [class="jetbrains-pycharm"] $ws3
 assign [class="jetbrains-webstorm"] $ws3
+assign [class="jetbrains-rider"] $ws3
 
 assign [class="dibidabidab"] $ws9
 assign [class="Spotify"] $ws0
