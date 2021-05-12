@@ -12,3 +12,8 @@ Host nijsachosting
     Hostname nijsac.nl.transurl.nl
     User nijsac.nl
     Port 22
+
+Host nijsacvps
+    Hostname 136.144.173.77
+    User nijsac
+    Port 22
