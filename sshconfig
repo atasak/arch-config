@@ -17,3 +17,7 @@ Host nijsacvps
     Hostname 136.144.173.77
     User nijsac
     Port 22
+
+Host sactest
+    Hostname net1.viess.mn
+    User niek
