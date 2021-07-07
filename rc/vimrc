@@ -25,6 +25,7 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'SacBase/vim-sac'
 Plugin 'camilstaps/vim-torxakis'
 Plugin 'whonore/Coqtail'
+Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -126,6 +127,11 @@ let &path.="/usr/include/"
 let g:clang_c_options = '-std=gnu11'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libstdc++ -I/usr/include'
 let g:clighter_libclang_file = '/usr/lib/llvm-3.6/lib/libclang.so'
+
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Config make options
 set makeprg=make

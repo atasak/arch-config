@@ -28,6 +28,7 @@ workspace $ws0 output DVI-D-0
 # Default application workspaces
 
 assign [class="discord"] $ws1
+assign [class="mumble"] $ws0
 
 assign [class="signal"] $ws2
 
