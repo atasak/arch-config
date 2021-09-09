@@ -54,7 +54,7 @@ mode "$mode_system" {
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym s exec --no-startup-id i3exit shutdown, mode "default"
-    bindsym t exec --no-startup-id shutdown -h 10, mode "default"
+    bindsym t exec --no-startup-id shutdown -h 5, mode "default"
     bindsym c exec --no-startup-id shutdown -c, mode "default"
 
     # exit system mode: "Enter" or "Escape"
