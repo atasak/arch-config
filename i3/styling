@@ -2,6 +2,7 @@
 default_border pixel 4
 default_floating_border normal
 hide_edge_borders none
+font pango:DejaVu Sans Mono 11
 
 # Run pywal scripts
 bindsym $mod+F1 exec ~/.theming/scripts/set_and_fetch.sh

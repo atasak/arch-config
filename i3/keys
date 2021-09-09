@@ -1,9 +1,11 @@
 # Directly start programs
 bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+backslash exec --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
 
 # Show/hide polybar
 bindsym $mod exec --no-startup-id polybar-msg cmd show
 bindsym $mod --release exec --no-startup-id polybar-msg cmd hide
+bindsym $mod+p exec --no-startup-id launch-polybar
 
 # Other keybindings
 bindsym $mod+q kill
