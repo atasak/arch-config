@@ -192,6 +192,7 @@ zstyle '*' single-ignored show
 
 ### PATH exports
 export PATH="/home/niek/.bin:$PATH"
+export PATH="/home/niek/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 ### Aliases
 alias f='fg'
