@@ -13,16 +13,12 @@ feh --bg-fill $DIR/img/wallpaper.jpg
 echo "Updating Firefox colors"
 pywalfox update
 
+echo "Updating Intellij colors"
 for d in /home/niek/.config/JetBrains/*/ ; do
-    echo "Generating scheme for $d"
+    echo "    Generating scheme for $d"
     mkdir -p $d/colors
     $DIR/intellijPywal/intellijPywalGen.sh $d
 done
-
-echo "Updating discord colors"
-$DIR/wal-discord/wal-discord
-echo "a"
-beautifuldiscord --css ~/.cache/wal-discord/style.css
 
 echo "Reload dunst"
 killall dunst
