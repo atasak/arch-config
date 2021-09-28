@@ -1,2 +1,2 @@
 # Set volume to 50%
-exec --no-startup-id amixer set Master 50%
+exec --no-startup-id amixer set Master 25%
