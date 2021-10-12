@@ -48,6 +48,7 @@ bindsym Mod1+Shift+Sys_Req --release exec "~/.bin/scrotclip -s 4"
 bindsym $mod+Shift+r exec --no-startup-id gen-i3-config; restart
 
 # Set shut down, restart and locking features
+bindsym $mod+Shift+F12 exec --no-startup-id shutdown -h 10
 bindsym $mod+F12 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (h)ibernate, (r)eboot, (s)hutdown, (t)imed shutdown, (c)ancel shutdown
 mode "$mode_system" {
