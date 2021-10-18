@@ -6,8 +6,8 @@
 ## Lightdm failed to start
   - Install linux510-nvidia (replace 510 with kernel version)
 
-## Pacman does not use the pacman bar
-  - Add 'ILoveCandy' to /etc/pacman.conf under the [options] section
+## Pacman does not use the pacman bar or colors
+  - Add 'ILoveCandy' or 'Color' respectively to /etc/pacman.conf under the [options] section
 
 ## Polybar does not display corners
   - Intall nerd-fonts-complete
