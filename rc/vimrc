@@ -55,7 +55,7 @@ set expandtab
 set autoindent
 
 " Spell checking
-set spell spelllang=en_us
+set spell spelllang=en_gb
 
 " Set word wrapping on column 80
 set tw=80
