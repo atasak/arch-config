@@ -41,3 +41,6 @@ assign [class="jetbrains-rider"] $ws3
 
 assign [class="dibidabidab"] $ws9
 assign [class="Spotify"] $ws0
+
+assign [class="cypress"] $ws8
+assign [class="Cypress"] $ws8
