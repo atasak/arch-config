@@ -17,7 +17,7 @@ workspace $ws0 output $right
 
 # Default application workspaces
 
-assign [class="discord"] $ws1
+assign [class="discord"] $ws5
 assign [class="mumble"] $ws0
 
 assign [class="signal"] $ws2
