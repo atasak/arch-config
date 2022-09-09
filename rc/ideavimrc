@@ -2,3 +2,5 @@ nnoremap gn :action GotoNextError<CR>
 nnoremap gp :action GotoPreviousError<CR>
 
 set NERDTree
+
+set scrolloff=50
