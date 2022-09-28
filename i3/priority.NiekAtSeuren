@@ -1,1 +1,7 @@
-exec --no-startup-id xrandr --output HDMI-1 --auto --primary --output DP-1 --auto --left-of HDMI-1 --output DVI-D-1 --auto --right-of HDMI-1
+# Monitors
+set $left DP-1-8
+set $right DP-1-1
+set $primary HDMI-3
+
+# Set screen outputs and positions
+exec --no-startup-id xrandr --output $primary --auto --primary --output $left --auto --left-of $primary --output $right --auto --right-of $primary

@@ -1,2 +1,7 @@
+#Monitors
+set $left eDP1
+set $right HDMI1
+set $primary HDMI1
+
 # Set screen outputs and positions
-exec --no-startup-id xrandr --output HDMI1 --auto --primary --output eDP1 --auto --left-of HDMI1
+exec --no-startup-id xrandr --output $primary --auto --primary --output $left --auto --left-of $primary
