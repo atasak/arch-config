@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+# Set workspaces on display
+workspace $ws1 output $left
+workspace $ws2 output $left
+workspace $ws3 output $primary
+workspace $ws4 output $primary
+workspace $ws5 output $primary
+workspace $ws6 output $primary
+workspace $ws7 output $primary
+workspace $ws8 output $primary
+workspace $ws9 output $right
+workspace $ws0 output $right
+
+>>>>>>> 9ad0845 (Maintenance of ma  3 okt 2022 12:16:35 CEST)
 # Default application workspaces
 
 assign [class="discord"] $ws5

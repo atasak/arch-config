@@ -1,7 +1,13 @@
 #Monitors
+<<<<<<< HEAD
 set $left DP-0
 set $right DVI-D-0
 set $primary HDMI-0
+=======
+set $left DP-1
+set $right DVI-D-1
+set $primary HDMI-1
+>>>>>>> 9ad0845 (Maintenance of ma  3 okt 2022 12:16:35 CEST)
 
 # Set screen outputs and positions
 exec --no-startup-id xrandr --output $primary --auto --primary --output $left --auto --left-of $primary --output $right --auto --right-of $primary
