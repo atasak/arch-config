@@ -18,6 +18,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Workspace names
+set $wsa 0
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -28,8 +29,11 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 set $ws0 10
+set $wsy 11
+set $wsz 12
 
 # switch to workspace
+bindsym $mod+` workspace $wsa
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -40,8 +44,11 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws0
+bindsym $mod+- workspace $wsy
+bindsym $mod+= workspace $wsz
 
 # Move focused container to workspace
+bindsym Mod1+Shift+` move container to workspace $wsa
 bindsym Mod1+Shift+1 move container to workspace $ws1
 bindsym Mod1+Shift+2 move container to workspace $ws2
 bindsym Mod1+Shift+3 move container to workspace $ws3
@@ -52,8 +59,11 @@ bindsym Mod1+Shift+7 move container to workspace $ws7
 bindsym Mod1+Shift+8 move container to workspace $ws8
 bindsym Mod1+Shift+9 move container to workspace $ws9
 bindsym Mod1+Shift+0 move container to workspace $ws0
+bindsym Mod1+Shift+- move container to workspace $wsy
+bindsym Mod1+Shift+= move container to workspace $wsz
 
 # Move to workspace with focused container
+bindsym $mod+Shift+` move container to workspace $wsa; workspace $wsa
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -64,8 +74,11 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
+bindsym $mod+Shift+- move container to workspace $ws0; workspace $wsy
+bindsym $mod+Shift+= move container to workspace $ws0; workspace $wsz
 
 # Switch workspace on other screen without losing focus
+bindsym Mod1+` workspace $wsa; workspace back_and_forth
 bindsym Mod1+1 workspace $ws1; workspace back_and_forth
 bindsym Mod1+2 workspace $ws2; workspace back_and_forth
 bindsym Mod1+3 workspace $ws3; workspace back_and_forth
@@ -76,8 +89,11 @@ bindsym Mod1+7 workspace $ws7; workspace back_and_forth
 bindsym Mod1+8 workspace $ws8; workspace back_and_forth
 bindsym Mod1+9 workspace $ws9; workspace back_and_forth
 bindsym Mod1+0 workspace $ws0; workspace back_and_forth
+bindsym Mod1+- workspace $wsy; workspace back_and_forth
+bindsym Mod1+= workspace $wsz; workspace back_and_forth
 
 # Set workspaces on display
+workspace $wsa output $left
 workspace $ws1 output $left
 workspace $ws2 output $left
 workspace $ws3 output $primary
@@ -86,8 +102,11 @@ workspace $ws5 output $primary
 workspace $ws6 output $primary
 workspace $ws7 output $primary
 workspace $ws8 output $primary
-workspace $ws9 output $right
+workspace $ws9 output $primary
 workspace $ws0 output $right
+workspace $wsy output $right
+workspace $wsz output $right
+workspace $wsa output $left
 workspace $ws1 output $left
 workspace $ws2 output $left
 workspace $ws3 output $primary
@@ -96,5 +115,7 @@ workspace $ws5 output $primary
 workspace $ws6 output $primary
 workspace $ws7 output $primary
 workspace $ws8 output $primary
-workspace $ws9 output $right
+workspace $ws9 output $primary
 workspace $ws0 output $right
+workspace $wsy output $right
+workspace $wsz output $right
