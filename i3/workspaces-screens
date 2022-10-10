@@ -74,8 +74,8 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
-bindsym $mod+Shift+- move container to workspace $ws0; workspace $wsy
-bindsym $mod+Shift+= move container to workspace $ws0; workspace $wsz
+bindsym $mod+Shift+- move container to workspace $wsy; workspace $wsy
+bindsym $mod+Shift+= move container to workspace $wsz; workspace $wsz
 
 # Switch workspace on other screen without losing focus
 bindsym Mod1+` workspace $wsa; workspace back_and_forth
