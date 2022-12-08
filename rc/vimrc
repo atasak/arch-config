@@ -8,6 +8,10 @@ syntax on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Fix coq colors
+hi def CoqtailChecked ctermbg=1
+hi def CoqtailSent    ctermbg=1
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -112,6 +116,7 @@ let g:SuperTabDefaultCompletionType = 'context'
 " Filetype mappings
 au BufNewFile,BufRead *.ino set filetype=cpp
 au BufNewFile,BufRead *.tpp set filetype=cpp
+au BufNewFile,BufRead *.v   set filetype=coq
 
 " Highlight setyp 
 set colorcolumn=80

@@ -5,7 +5,7 @@ exec --no-startup-id /home/niek/.bin/launch-polybar
 focus_follows_mouse no
 
 # System options
-exec --no-startup-id /usr/bin/setxkbmap -option "caps:swapescape"
+exec --no-startup-id /usr/bin/setxkbmap -layout us -variant altgr-intl -option "caps:swapescape"
 
 # Tray icons
 exec --no-startup-id volumeicon
@@ -25,3 +25,4 @@ exec --no-startup-id rmdir /home/niek/Downloads
 
 bindsym --border button1 nop
 bindsym --border button3 nop
+
