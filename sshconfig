@@ -21,3 +21,8 @@ Host nijsacvps
 Host sactest
     Hostname net1.viess.mn
     User niek
+
+Host portal
+    Hostname 45.8.236.53
+    User root
+
