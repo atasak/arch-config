@@ -68,7 +68,7 @@ set tw=80
 set laststatus=2
 
 " Make
-command Make execute "silent !make" | redraw!
+command Make execute "silent !make -j" | redraw!
 map <F5> :Make<cr>
 
 " Compile pandoc
