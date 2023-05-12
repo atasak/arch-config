@@ -1,0 +1,7 @@
+#Monitors
+set $left DP-2-1
+set $right eDP-1
+set $primary eDP-1
+
+# Set screen outputs and positions
+exec --no-startup-id xrandr --output $primary --auto --primary --output $left --auto --left-of $primary
