@@ -30,6 +30,7 @@ Plugin 'SacBase/vim-sac'
 Plugin 'camilstaps/vim-torxakis'
 Plugin 'whonore/Coqtail'
 Plugin 'SirVer/ultisnips'
+Plugin 'dpelle/vim-LanguageTool'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,3 +141,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Config make options
 set makeprg=make
+
+" Language tool config
+let g:languagetool_cmd='/usr/bin/languagetool'
+let g:languagetool_lang='en-GB'
+map <F2> :LanguageToolCheck<cr>
