@@ -4,12 +4,13 @@
 
 preset="$1"
 offset="$2"
+compos="$3"
 
 DIR=~/.theming
 
 # Check arguments
-if [ -z "$preset" ] || [ -z "$offset" ]; then
-    echo "Usage: set_and_fetch.sh <preset|set> <offset>"
+if [ -z "$preset" ] || [ -z "$offset" ] || [ -z "$compos" ]; then
+    echo "Usage: set_and_fetch.sh <preset|set> <offset> <i3|hypr>"
     exit 1
 fi
 
@@ -17,7 +18,7 @@ fi
 # Set temporary background and colors
 
 if [ "$preset" = "preset" ]; then
-    $DIR/scripts/background.sh $DIR
+    $DIR/scripts/background.sh $DIR $compos
 fi
 
 # Wait for internet
@@ -32,8 +33,9 @@ $DIR/scripts/bing.js $DIR $offset
 
 # Set background and colors
 
-$DIR/scripts/background.sh $DIR
+$DIR/scripts/background.sh $DIR $compos
 
 # Precompute lock screen big image
-
-/home/niek/.arch-config/bin/dolock -d /home/niek/.arch-config/theming/img/wallpaper.png
+if [ "$compos" = "i3" ]; then
+    /home/niek/.arch-config/bin/dolock -d /home/niek/.arch-config/theming/img/wallpaper.png
+fi

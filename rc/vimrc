@@ -31,6 +31,7 @@ Plugin 'camilstaps/vim-torxakis'
 Plugin 'whonore/Coqtail'
 Plugin 'SirVer/ultisnips'
 Plugin 'dpelle/vim-LanguageTool'
+Plugin 'elkowar/yuck.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
