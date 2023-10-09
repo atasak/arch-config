@@ -6,8 +6,8 @@ compos=$2
 convert $DIR/img/wallpaper.jpg $DIR/img/wallpaper.png
 cp $DIR/img/wallpaper.jpg $DIR/img/lockscreen.jpg
 cp $DIR/img/wallpaper.png $DIR/img/lockscreen.png
-#wal -c
-#wal -i $DIR/img/wallpaper.png -n --saturate 0.6
+wal -c
+wal -i $DIR/img/wallpaper.png -n --saturate 0.6
 
 echo "Setting wallpapers"
 if [ "$compos" = "i3" ]; then

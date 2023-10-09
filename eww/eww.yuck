@@ -1,33 +1,29 @@
+(include "./workspaces/workspaces-widget.yuck")
+
+(defwidget bar_left []
+  "Hi")
+
+(defwidget bar_center []
+  (workspace_bar))
+
+(defwidget bar_right []
+  "Hi")
+
 (defwindow statusbar
   :monitor 0
+  :stacking "fg"
+  :exclusive true
 
   :geometry ( geometry
     :anchor "top center"
-    :x 0
-    :y 0
-    :width: "10%"
-    :height: "10%")
-
-  :stacking "fg"
-  :exclusive true
+    :x "0%"
+    :y "0%"
+    :width: "100%"
+    :height: "53px")
   
-  ( workspaces ))
-
-(deflisten workspaces :initial "[]" "bash ~/.config/eww/get-workspaces")
-(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
-(defwidget workspaces []
-  (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
-    (box :space-evenly true
-      (label :text "${workspaces}${current_workspace}" :visible false)
-      (for workspace in workspaces
-        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
-          (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
-            (label :text "${workspace.id}")
-          )
-        )
-      )
-    )
-  )
-)
-
-
+  (centerbox
+    :class "statusbar"
+    :width "1920"
+    ( bar_left )
+    ( bar_center )
+    ( bar_right )))
