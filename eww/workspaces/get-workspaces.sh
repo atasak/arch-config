@@ -17,9 +17,9 @@ declare -A wsnames=([1]='~' [2]='1' [3]='2' [4]='3' [5]='4' [6]='5' [7]='6' [8]=
 status() {
   if [ "${o[$1]}" -eq 1 ]; then 
     mon=${monitormap[${workspaces[$1]}]}
-    echo -n "${dimmed[$mon]}"
+    echo -n "workspace-text-nonempty"
   else
-    echo -n "$empty"
+    echo -n "workspace-text-empty"
   fi
 }
 
@@ -57,7 +57,7 @@ generate() {
   echo -n '['
 
   for i in {1..13}; do
-    echo -n ''$([ $i -eq 1 ] || echo ,)'{"num":"'$i'","clr":"'$(status "$i")'","name":"'${wsnames[$i]}'"}'
+    echo -n ''$([ $i -eq 1 ] || echo ,)'{"num":"'$i'","cls":"'$(status "$i")'"}'
     # echo -n ''$([ $i -eq 1 ] || echo ,) '{ "number": "'"$i"'", "activity": "'"$(status_activity $i)"'", "color": "'$(status "$i")'" }'
   done
 
@@ -125,30 +125,3 @@ socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - |
   # echo $line
   # generate
 done
-
-# main loop
-# socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | rg --line-buffered "workspace|mon(itor)?" | while read -r line; do
-#   case ${line%>>*} in
-#     "workspace")
-#       focusedws=${line#*>>}
-#       generate
-#       ;;
-#     "focusedmon")
-#       focusedws=${line#*,}
-#       generate
-#       ;;
-#     "createworkspace")
-#       workspace_event "${line#*>>}" 1
-#       focusedws=${line#*>>}
-#       # generate
-#       ;;
-#     "destroyworkspace")
-#       workspace_event "${line#*>>}" 0
-#       generate
-#       ;;
-#     "monitor"*)
-#       monitor_event
-#       generate
-#       ;;
-#   esac
-# done

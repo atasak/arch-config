@@ -1,0 +1,33 @@
+(deflisten music_meta :initial '{"title":"", "artist":""}' "music/music.sh meta")
+(deflisten music_time :initial '{"time":0, "length": 1}' "music/music.sh time")
+(deflisten music_art  :initial '' "music/music.sh cover")
+
+(defwidget music_bar []
+    (box 
+      (overlay
+        (box
+          :space-evenly false
+
+          (box
+            :halign "center" :valign "center"
+            :class 'music-cover'
+            :style "background-image: url('${music_art ?: 'eww_covers/cover_art_default'}')")
+
+          (box
+            :orientation "v"
+            :class 'music-info'
+            (label
+              :xalign 0
+              :class 'music-title'
+              :text '${music_meta.title}')
+            (label
+              :xalign 0
+              :class 'music-artist'
+              :text '${music_meta.artist}')))
+        (box
+          :class 'music-time music-time-background')
+        (box
+          :class 'music-time music-time-foreground'
+          :style "
+            margin-right: ${(1 - music_time.time / music_time.length) * 386}px")
+)))

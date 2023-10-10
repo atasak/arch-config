@@ -1,15 +1,27 @@
 .workspace-button {
+    transition: 400ms ease;
 }
 
 .workspace-text {
+    color: $background;
+    font-size: 13px;
     border-radius: 9999px;
-    min-width: 27px;
-    min-height: 27px;
-    margin: 13px 2px 13px 2px;
+    min-width: 23px;
+    min-height: 23px;
+    margin: 15px 4px;
 }
 
+
 .workspace-text-active {
-    background: transparent;
-    border: 2px solid black;
-    margin: 11px 0;
+    font-size: 13px;
+    background: $foreground;
+    margin: 15px 0;
+}
+
+.workspace-text-nonempty {
+    background: $color2;
+}
+
+.workspace-text-empty {
+    background: $color11;
 }

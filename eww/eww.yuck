@@ -1,13 +1,21 @@
+(include "./music/music-widget.yuck")
 (include "./workspaces/workspaces-widget.yuck")
+(include "./system/system-widget.yuck")
 
 (defwidget bar_left []
-  "Hi")
+  (box
+    :class "bar-section"
+    (music_bar)))
 
 (defwidget bar_center []
-  (workspace_bar))
+  (box
+    :class "bar-section"
+    (workspace_bar)))
 
 (defwidget bar_right []
-  "Hi")
+  (box
+    :class "bar-section"
+    (system_bar)))
 
 (defwindow statusbar
   :monitor 0

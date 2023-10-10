@@ -1,4 +1,16 @@
+* {
+    all: unset;
+}
+
 @import '/home/niek/.cache/wal/colors.scss';
-@import 'vars';
-@import 'bar';
 @import 'workspaces/workspaces';
+@import 'music/music';
+@import 'system/system';
+
+.statusbar {
+    background-color: $background;
+}
+
+.bar-section {
+    margin: 0 96px;
+}

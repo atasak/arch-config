@@ -1,0 +1,52 @@
+(defpoll time :initial '' :interval "1s" "date +'%H:%M:%S'")
+(defpoll date :initila '' :interval "10s" "date +'%A %d/%m'")
+
+(defwidget system_bar []
+  (box
+    :class 'sysbox'
+    :orientation 'h'
+    :space-evenly false
+    :halign 'end'
+    (system_time)
+    (system_circle 
+      :value "${EWW_CPU.avg}"
+      :display "${round(EWW_CPU.avg, 0)}%")
+    (system_circle 
+      :value "${EWW_RAM.used_mem_perc}"
+      :display "${round(EWW_RAM.used_mem / 1000000000, 1)}GB")
+    (system_circle 
+      :value "${EWW_DISK['/'].used_perc}"
+      :display "${round(EWW_DISK['/'].used / 1000000000, 0)}GB")
+    (system_circle 
+      :value "${EWW_BATTERY['BAT0'].capacity}"
+      :display "${EWW_BATTERY['BAT0'].capacity}%")
+))
+  
+(defwidget system_circle [value display]
+  (box
+    :class "sys-circle-box"
+    (circular-progress
+      :value "${value}"
+      :class "sys-circle"
+      :thickness 14
+      :start-at 75
+      :clockwise false
+      )
+    ;(label
+    ;  :text "${display}")
+))
+
+(defwidget system_time []
+  (box 
+    :class 'time-box'
+    :orientation 'v'
+    (label
+      :xalign 100
+      :class 'time'
+      :text "${time}")
+    (label 
+      :xalign 100
+      :class 'date'
+      :text "${date}")
+  )
+)

@@ -19,15 +19,22 @@ if [ "$compos" = "hypr" ]; then
 fi
 
 echo "Updating Firefox colors"
-#pywalfox update
+pywalfox update
 
-echo "Updating Intellij colors"
-#for d in /home/niek/.config/JetBrains/*/ ; do
-#    echo "    Generating scheme for $d"
-#    mkdir -p $d/colors
-#    $DIR/intellijPywal/intellijPywalGen.sh $d
-#done
+if [ "$compos" = "hypr" ]; then
+    eww reload
+fi
 
-echo "Reload dunst"
-#killall dunst
-#notify-send "OS colors set"
+
+if [ "$compos" = "i3" ]; then
+    echo "Updating Intellij colors"
+    for d in /home/niek/.config/JetBrains/*/ ; do
+        echo "    Generating scheme for $d"
+        mkdir -p $d/colors
+        $DIR/intellijPywal/intellijPywalGen.sh $d
+    done
+
+    echo "Reload dunst"
+    killall dunst
+    notify-send "OS colors set"
+fi
