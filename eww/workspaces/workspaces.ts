@@ -35,6 +35,10 @@ const configuratedMonitors = [
     new Monitor('PHL 275S1', 'UK02324000792', 1, 0),
     // Work screen right (unused push internal to left)
     new Monitor('PHL 275S1', 'UK02324000783', 2, 0),
+    // Home screen middle/main (push internal to left)
+    new Monitor('LG ULTRAWIDE', '0x0001B786', 1, 0),
+    // Home screen right (unused push internal to left)
+    new Monitor('DELL U2312HM', 'KF87Y28LC6HL', 2, 0),
 ]
 
 class Workspace {
@@ -348,46 +352,60 @@ function handleCmd(initDE: DelayedExecution, cmd: string, args: string[]): boole
     return true
 }
 
+interface JsonMargin {
+    dots: number
+    margins: number
+    spaces: number
+}
+
 interface JsonWorkspace {
     id: number
     name: string
     cls: string
-    spacesRight: number
-}
-
-interface JsonMarker {
-    cls: string
-    dotsLeft: number
-    dotsRight: number
-    spacesLeft: number
-    spacesRight: number
+    left: JsonMargin
+    right: JsonMargin
 }
 
 interface Json {
     workspaces: JsonWorkspace[]
-    markers: JsonMarker[]
+    markers: JsonWorkspace[]
     errors: string[]
 }
 
-function jsonPrint() {
-    const jsonWorkspaces: JsonWorkspace[] = workspaces.map(({id, name, open, extraMarginRight}) => ({
-        id, name,
-        cls: open ? 'open' : 'closed',
-        spacesRight: extraMarginRight ? 1 : 0
-    }))
-    const activeMarkers: JsonMarker[] = filterNull(monitors)
-        .map(({active}) => workspaces[active])
-        .map(({dotsLeft, dotsRight, spacesLeft, spacesRight}) =>
-            ({cls: 'active', dotsLeft, dotsRight, spacesLeft, spacesRight}))
-    const cmpFocus: (ws: Workspace) => JsonMarker = ({dotsLeft, dotsRight, spacesLeft, spacesRight}) =>
-        ({cls: 'focus', dotsLeft, dotsRight, spacesLeft, spacesRight})
-    const focusMarker = cmpFocus(workspaces[focusWs])
-    const json: Json = {
-        workspaces: jsonWorkspaces,
-        markers: [...activeMarkers, focusMarker],
-        errors
+function jsonPrint(pretty: boolean): () => void {
+    const prettyArg = pretty ? 2 : null
+    return () => {
+        const marginNone: JsonMargin = {dots: 0, margins: 0, spaces: 0}
+        const marginNormal: JsonMargin = {dots: 0, margins: 1, spaces: 0}
+        const marginSpacing: JsonMargin = {dots: 0, margins: 1, spaces: 1}
+        const jsonWorkspaces: JsonWorkspace[] = workspaces.map(
+            ({id, name, open, extraMarginRight}) =>
+                ({
+                    id, name,
+                    cls: open ? 'open' : 'closed',
+                    left: marginNormal,
+                    right: extraMarginRight ? marginSpacing : marginNormal
+                }))
+        const mkMarker: (cls: string, workspace: Workspace) => JsonWorkspace =
+            (cls, {id, name, dotsLeft, dotsRight, spacesLeft, spacesRight}) => ({
+                id, name, cls,
+                left: {dots: dotsLeft, margins: dotsLeft * 2 + 1, spaces: spacesLeft},
+                right: {dots: dotsRight, margins: dotsRight * 2 + 1, spaces: spacesRight},
+            })
+        const activeMarkers: JsonWorkspace[] = filterNull(monitors)
+            .map(({active}) => workspaces[active])
+            .map(workspace => mkMarker('active', workspace))
+        const cmpFocus: (ws: Workspace) => JsonWorkspace = workspace => mkMarker('focus', workspace)
+        const focusMarker = cmpFocus(workspaces[focusWs])
+        const restMarker: JsonWorkspace = {id: 0, name: '', cls: 'none', left: marginNone, right: marginNone}
+        const restMarkers = Array(6 - 1 - activeMarkers.length).fill(restMarker)
+        const json: Json = {
+            workspaces: jsonWorkspaces,
+            markers: [...activeMarkers, focusMarker, ...restMarkers],
+            errors
+        }
+        console.log(JSON.stringify(json, null, prettyArg))
     }
-    console.log(JSON.stringify(json))
 }
 
 function debugPrint() {
@@ -436,7 +454,8 @@ async function listen(print: () => void) {
 }
 
 async function main() {
-    const print = process.argv[process.argv.length - 1] === 'debug' ? debugPrint : jsonPrint
+    const pretty = process.argv[process.argv.length - 1] === 'pretty'
+    const print = process.argv[process.argv.length - 1] === 'debug' ? debugPrint : jsonPrint(pretty)
     await init(print)()
     await listen(print)
 }
