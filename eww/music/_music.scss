@@ -1,3 +1,7 @@
+.music {
+    margin-right: 64px;
+}
+
 .music-cover {
     background-position: center;
     background-size: auto 100%;
@@ -12,24 +16,20 @@
 .music-info {
     margin: 4px 0;
     margin-left: 12px;
-    color: $foreground;
-}
-
-.music-title {
-    font-size: 1.2rem
 }
 
 .music-time {
     margin-top: 47px;
     margin-left: 56px;
-    border-radius: 3px;
 }
 
 .music-time-background {
+    border-radius: 3px;
     border: 3px solid lighten($background, 20%);
 }
 
 .music-time-foreground {
+    border-radius: 3px;
     border: 3px solid $color2;
     transition: 1000ms linear;
 }

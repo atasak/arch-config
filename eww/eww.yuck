@@ -1,3 +1,6 @@
+(defvar detailed_open false)
+(defvar detailed_dur "400ms")
+
 (include "./music/music-widget.yuck")
 (include "./workspaces/workspaces-widget.yuck")
 (include "./system/system-widget.yuck")
@@ -28,10 +31,13 @@
     :y "0%"
     :width: "100%"
     :height: "53px")
-  
-  (centerbox
-    :class "statusbar"
-    :width "1920"
-    ( bar_left )
-    ( bar_center )
-    ( bar_right )))
+  (eventbox
+    :onhover     "eww update detailed_open=true"
+    :onhoverlost "eww update detailed_open=false"
+    (centerbox
+      :class "statusbar"
+      :width "1920"
+      ( bar_left )
+      ( bar_center )
+      ( bar_right ))
+))

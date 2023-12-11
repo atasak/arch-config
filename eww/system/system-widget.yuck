@@ -3,43 +3,115 @@
 
 (defwidget system_bar []
   (box
-    :class 'sysbox'
+    :class 'pm-0'
     :orientation 'h'
     :space-evenly false
     :halign 'end'
     (system_time)
     (system_circle 
       :value "${EWW_CPU.avg}"
-      :display "${round(EWW_CPU.avg, 0)}%")
+      :display "${round(EWW_CPU.avg, 0)}%"
+      :name "CPU")
     (system_circle 
       :value "${EWW_RAM.used_mem_perc}"
-      :display "${round(EWW_RAM.used_mem / 1000000000, 1)}GB")
+      :display "${round(EWW_RAM.used_mem / 1000000000, 1)}GB"
+      :name "RAM")
     (system_circle 
       :value "${EWW_DISK['/'].used_perc}"
-      :display "${round(EWW_DISK['/'].used / 1000000000, 0)}GB")
-    (system_circle 
-      :value "${EWW_BATTERY['BAT0'].capacity}"
-      :display "${EWW_BATTERY['BAT0'].capacity}%")
+      :display "${round(EWW_DISK['/'].used / 1000000000, 0)}GB"
+      :name "DISK")
+    (overlay
+      (system_circle
+        :value "${EWW_BATTERY['BAT0'].capacity}"
+        :display "${EWW_BATTERY['BAT0'].capacity}%"
+        :name "BAT")
+      (system_circle_icon
+        :icon "system/charging.svg"
+        :visible "${EWW_BATTERY['BAT0'].status == 'Charging' || EWW_BATTERY['BAT0'].status == 'Full'}")
+    )
+    (system_menu)
 ))
   
-(defwidget system_circle [value display]
+(defwidget system_circle [value display name]
   (box
-    :class "sys-circle-box"
-    (circular-progress
-      :value "${value}"
+    :class "pm-0"
+    :space-evenly false
+
+    (box
       :class "sys-circle"
-      :thickness 14
-      :start-at 75
-      :clockwise false
+      :space-evenly false
+      (circular-progress
+        :value value
+        :thickness 14
+        :start-at 75
+        :clockwise false)
+    )
+
+    (box
+      :orientation "v"
+      :space-evenly false
+      :class "mp-0 sys-text"
+
+      (revealer
+        :transition "slideright"
+        :reveal detailed_open
+        :duration detailed_dur
+        (revealer
+          :transition "crossfade"
+          :reveal detailed_open
+          :duration detailed_dur
+          :class "pm-0"
+          (label
+            :halign "start"
+            :class "sys-textbox txt-sm"
+            :text "${name}")))
+
+      (revealer
+        :transition "slideright"
+        :reveal detailed_open
+        :duration detailed_dur
+        (revealer
+          :transition "crossfade"
+          :reveal detailed_open
+          :duration detailed_dur
+          (label
+            :halign "start"
+            :class "sys-textbox txt-md"
+            :text "${display}")))
+    )
+  )
+)
+
+(defwidget system_circle_icon [icon visible]
+  (revealer
+    :transition "crossfade"
+    :reveal visible
+    :duration "detailed_dur"
+    (box
+      :class "pm-0"
+      :space-evenly false
+      (box
+        :class "sys-circle"
+        :space-evenly false
+        (box
+          :class "sys-icon-box"
+          :space-evenly false
+          (image
+            :class "sys-icon"
+            :path icon
+            :image-width 17
+            :image-height 17)
+        )
       )
-    ;(label
-    ;  :text "${display}")
-))
+    )
+  )
+)
 
 (defwidget system_time []
   (box 
     :class 'time-box'
     :orientation 'v'
+    :space-evenly false
     (label
       :xalign 100
       :class 'time'
@@ -50,3 +122,10 @@
       :text "${date}")
   )
 )
+
+(defwidget system_menu []
+  (button :class 'sys-button0'
+    (box :class 'sys-button1'
+      (box :class 'sys-button2'
+    )))
+  )

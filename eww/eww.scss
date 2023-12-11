@@ -12,5 +12,32 @@
 }
 
 .bar-section {
-    margin: 0 96px;
+    margin: 0 32px;
+}
+
+.text-sm {
+    color: $foreground;
+    font-size: .8rem;
+}
+
+.text-md {
+    color: $foreground;
+}
+
+.text-lg {
+    color: $foreground;
+    font-size: 1.2rem
+}
+
+.text-box {
+    margin: 4px 12px;
+}
+
+.pm-0 {
+    padding: 0;
+    margin: 0;
+}
+
+revealer {
+    min-width: 0;
 }

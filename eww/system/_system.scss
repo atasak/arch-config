@@ -1,17 +1,46 @@
 .sys-circle {
-    margin: 4px 10px;
-    padding: 0;
+    padding: 12px 4px 13px 12px;
     color: $color2;
 }
 
-.sys-circle-box {
-    margin: 0;
-    padding: 0;
+.sys-textbox {
+    min-width: 48px;
 }
 
-.sysbox {
-    padding: 0;
-    margin: 0;
+.sys-text {
+    margin: 6px 0 6px 0;
+}
+
+.sys-icon-box {
+    margin: 6px;
+    min-width: 16px;
+    min-height: 16px;
+    background: $color2;
+    border-radius: 9999px;
+}
+
+.sys-icon {
+    color: $background;
+}
+
+.sys-button0 {
+    margin-left: 24px;
+    padding: 10px 0 10px 0;
+}
+
+.sys-button1 {
+    border-radius: 9999px;
+    min-width: 25px;
+    min-height: 25px;
+    border: 4px solid $color11;
+}
+
+.sys-button2 {
+    border-radius: 9999px;
+    min-width: 5px;
+    min-height: 5px;
+    margin: 10px;
+    background-color: $color11;
 }
 
 .time {
@@ -19,6 +48,7 @@
 }
 
 .time-box {
+    margin-top: 4px;
     margin-right: 12px;
     color: $foreground;
 }

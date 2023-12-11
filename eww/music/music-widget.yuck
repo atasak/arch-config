@@ -3,7 +3,8 @@
 (deflisten music_art  :initial '' "music/music.sh cover")
 
 (defwidget music_bar []
-    (box 
+    (box
+      :class 'music'
       (overlay
         (box
           :space-evenly false
@@ -16,18 +17,28 @@
           (box
             :orientation "v"
             :class 'music-info'
+            :space-evenly false
             (label
               :xalign 0
-              :class 'music-title'
+              :class 'text-lg'
               :text '${music_meta.title}')
             (label
               :xalign 0
-              :class 'music-artist'
+              :class 'text-md'
               :text '${music_meta.artist}')))
         (box
-          :class 'music-time music-time-background')
-        (box
-          :class 'music-time music-time-foreground'
-          :style "
-            margin-right: ${(1 - music_time.time / music_time.length) * 386}px")
+          :class 'music-time'
+          (overlay
+            (box
+              :class 'music-time-background')
+            (box
+              :class 'music-time-foreground'
+              :style "margin-right: ${(1 - music_time.time / music_time.length) * 515}px")
+        ))
+        (revealer
+          :transition 'crossfade'
+          :reveal detailed_open
+          :duration detailed_dur
+          (box
+        ))
 )))

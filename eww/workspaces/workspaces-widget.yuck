@@ -2,7 +2,7 @@
 
 (defvar ws_margin 4)
 (defvar ws_margin_extra 22)
-(defvar ws_dotsize 27)
+(defvar ws_dotsize 23)
 
 (defwidget workspace_bar []
   (eventbox
@@ -13,32 +13,54 @@
         ; Only displays workspace state (has windows or not)
         :class "overlay"
         (box
-          :class "module workspaces"
           :spacing 0
           :space-evenly false
           (for workspace in "${workspaces.workspaces}"
-            (workspace_ws :workspace workspace)
+            (workspace_ws :workspace workspace :text false)
           )
         )
         ; Workspace indicators
-        (workspace_ws :workspace "${workspaces.markers[0]}")
-        (workspace_ws :workspace "${workspaces.markers[1]}")
-        (workspace_ws :workspace "${workspaces.markers[2]}")
-        (workspace_ws :workspace "${workspaces.markers[3]}")
-        (workspace_ws :workspace "${workspaces.markers[4]}")
-        (workspace_ws :workspace "${workspaces.markers[5]}")
-        (label :text "${arraylength(workspaces.workspaces)} ${arraylength(workspaces.markers)} ${workspaces.markers[0]}")
+        (workspace_ws :workspace "${workspaces.markers[0]}" :text false)
+        (workspace_ws :workspace "${workspaces.markers[1]}" :text false)
+        (workspace_ws :workspace "${workspaces.markers[2]}" :text false)
+        (workspace_ws :workspace "${workspaces.markers[3]}" :text false)
+        (workspace_ws :workspace "${workspaces.markers[4]}" :text false)
+        (workspace_ws :workspace "${workspaces.markers[5]}" :text false)
+        ; workspace text
+        (revealer
+          :transition 'crossfade'
+          :reveal detailed_open
+          :duration detailed_dur
+          (box
+            :spacing 0
+            :space-evenly false
+            (for workspace in "${workspaces.workspaces}"
+              (workspace_ws :workspace workspace :text true)
+            )
+          )
+        )
       )
     )
   )
 )
 
-(defwidget workspace_ws [workspace]
+(defwidget workspace_ws [workspace text]
   (button
-    :class "workspace-button workspace-button-${workspace.cls}"
+    :class "workspace-button workspace-button-${text ? 'text' :workspace.cls}"
     :style "
-            margin-left:  ${workspace.left.dots * ws_dotsize + workspace.left.margins * ws_margin + workspace.left.spaces * ws_margin_extra}px;
-            margin-left:  ${workspace.right.dots * ws_dotsize + workspace.right.margins * ws_margin + workspace.right.spaces * ws_margin_extra}px;
-    "
+            margin-left:  ${workspace.left.dots * ws_dotsize +
+              workspace.left.margins * ws_margin +
+              workspace.left.spaces * ws_margin_extra +
+              (workspace.cls == 'focus' ? 7 : 0)}px;
+            margin-right:  ${workspace.right.dots * ws_dotsize +
+              workspace.right.margins * ws_margin +
+              workspace.right.spaces * ws_margin_extra +
+              (workspace.cls == 'focus' ? 7 : 0)}px;"
+    (revealer
+      :transition "none"
+      :reveal text
+      :duration "0ms"
+      (label :text "${workspace.name}")
+    )
   )
 )

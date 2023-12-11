@@ -1,9 +1,5 @@
-.workspace-button,
-.workspace-text {
+.workspace-button {
     transition: 400ms ease;
-}
-
-.workspace-text {
     color: $background;
     font-size: 13px;
     border-radius: 9999px;
@@ -12,17 +8,27 @@
     margin: 15px 4px;
 }
 
-
-.workspace-text-active {
+.workspace-button-active {
     font-size: 13px;
     background: $foreground;
     margin: 15px 0;
 }
 
-.workspace-text-nonempty {
+.workspace-button-open {
     background: $color2;
 }
 
-.workspace-text-empty {
+.workspace-button-closed {
     background: $color11;
+}
+
+.workspace-button-focus {
+    background: $color2;
+    min-width: 9px;
+    min-height: 9px;
+    margin: 22px 4px;
+}
+
+.workspace-button-text {
+    background: rgba($foreground, .5);
 }
