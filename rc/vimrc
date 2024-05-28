@@ -147,3 +147,6 @@ set makeprg=make
 let g:languagetool_cmd='/usr/bin/languagetool'
 let g:languagetool_lang='en-GB'
 map <F2> :LanguageToolCheck<cr>
+
+" Autosave latex
+au BufNewFile,BufRead *.tex autocmd TextChanged,TextChangedI <buffer> silent write
