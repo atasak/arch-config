@@ -15,6 +15,7 @@ echo "Backing up installed packges..."
 # Update with pacman
 echo "Cleaning pacman orphans and cache"
 sudo pacman -Syu
+yay
 # Autoremove with pacman
 sudo pacman -Rns $(sudo pacman -Qtdq)
 # Clear pacman cache
