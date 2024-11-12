@@ -32,6 +32,7 @@ Plugin 'whonore/Coqtail'
 Plugin 'SirVer/ultisnips'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'elkowar/yuck.vim'
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -148,5 +149,4 @@ let g:languagetool_cmd='/usr/bin/languagetool'
 let g:languagetool_lang='en-GB'
 map <F2> :LanguageToolCheck<cr>
 
-" Autosave latex
-au BufNewFile,BufRead *.tex autocmd TextChanged,TextChangedI <buffer> silent write
+let g:vimtex_view_method = 'zathura'
