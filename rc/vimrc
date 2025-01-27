@@ -67,8 +67,26 @@ set spell spelllang=en_gb
 " Set word wrapping on column 80
 set tw=80
 
-" Fix lightline
+" Word count in status bar
+let g:word_count=wordcount().words
+function WordCount()
+    if has_key(wordcount(),'visual_words')
+        let g:word_count=wordcount().visual_words " count selected words
+    else
+        let g:word_count=wordcount().words " or shows total words
+    endif
+    return g:word_count
+endfunction
+
+set statusline =
+set statusline +=%1*\ %{&ff}%*
+set statusline +=%2*\ %<%F%*
+set statusline +=%1*%=%5l%*
+set statusline +=%2*/%L%*
+set statusline +=%1*%4v%*
+set statusline +=%2*%5{WordCount()}%*
 set laststatus=2
+let g:lightline={'colorscheme':'wal'}
 
 " Make
 command Make execute "silent !make -j" | redraw!
