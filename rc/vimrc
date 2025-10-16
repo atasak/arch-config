@@ -65,7 +65,7 @@ set autoindent
 set spell spelllang=en_gb
 
 " Set word wrapping on column 80
-set tw=80
+"set tw=80
 
 " Word count in status bar
 let g:word_count=wordcount().words
@@ -115,6 +115,12 @@ set dir+=/tmp
 :command Q  q
 :command Qa qa
 :command QA qa
+
+" Setup visual moving around
+nnoremap j gj
+nnoremap k gk
+nnoremap 0 g0
+nnoremap $ g$
 
 " NerdTree git setup
 let g:NERDTreeGitStatusIndicatorMapCustom = {
