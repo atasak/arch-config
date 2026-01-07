@@ -1,4 +1,4 @@
 export HOSTNAME=`cat /etc/hostname`
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 rmdir -rf ~/Downloads
-Hyprland
+start-hyprland
