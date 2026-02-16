@@ -1,6 +1,15 @@
 .sys-circle {
     padding: 12px 4px 13px 12px;
+}
+
+.sys-circle-front {
+    padding: 12px 4px 13px 12px;
     color: $color2;
+}
+
+.sys-circle-back {
+    padding: 12px 4px 13px 12px;
+    color: rgba($color11, .5);
 }
 
 .sys-textbox {

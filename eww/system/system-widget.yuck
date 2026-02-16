@@ -10,19 +10,23 @@
     (system_time)
     (system_circle 
       :value "${EWW_CPU.avg}"
+      :value_back ""
       :display "${round(EWW_CPU.avg, 0)}%"
       :name "CPU")
     (system_circle 
-      :value "${EWW_RAM.used_mem_perc}"
+      :value "${100 - (EWW_RAM.available_mem * 100 / EWW_RAM.total_mem)}"
+      :value_back "${100 - (EWW_RAM.free_mem * 100 / EWW_RAM.total_mem)}"
       :display "${round(EWW_RAM.used_mem / 1000000000, 1)}GB"
       :name "RAM")
     (system_circle 
       :value "${EWW_DISK['/'].used_perc}"
+      :value_back ""
       :display "${round(EWW_DISK['/'].used / 1000000000, 0)}GB"
       :name "DISK")
     (overlay
       (system_circle
         :value "${EWW_BATTERY['BAT0'].capacity}"
+        :value_back ""
         :display "${EWW_BATTERY['BAT0'].capacity}%"
         :name "BAT")
       (system_circle_icon
@@ -32,19 +36,30 @@
     (system_menu)
 ))
   
-(defwidget system_circle [value display name]
+(defwidget system_circle [value value_back display name]
   (box
     :class "pm-0"
     :space-evenly false
 
-    (box
-      :class "sys-circle"
-      :space-evenly false
-      (circular-progress
-        :value value
-        :thickness 14
-        :start-at 75
-        :clockwise false)
+    (overlay
+      (box
+        :class "sys-circle-back"
+        :space-evenly false
+        (circular-progress
+          :value value_back
+          :thickness 14
+          :start-at 75
+          :clockwise false)
+      )
+      (box
+        :class "sys-circle-front"
+        :space-evenly false
+        (circular-progress
+          :value value
+          :thickness 14
+          :start-at 75
+          :clockwise false)
+      )
     )
 
     (box

@@ -2,11 +2,12 @@
 
 # Clean downloads folder
 echo "Cleaning temporary files..."
-find ~/tmp/ -type f -mtime +4 -exec rm -f {} \;
-find ~/*.png -type f -mtime +4 -exec rm -f {} \;
+find ~/tmp/ -type f -mtime +7 -exec rm -f {} \;
+find ~/*.png -type f -mtime +7 -exec rm -f {} \;
 find ~/tmp/ -depth -type d -empty -exec rmdir {} \;
 mkdir -p ~/tmp/
-find ~/.cache/i3lock-multimonitor/img/ -type f -mtime +4 -exec rm -f {} \;
+find ~/.cache/i3lock-multimonitor/img/ -type f -mtime +7 -exec rm -f {} \;
+rm -rf ~/Downloads ~/Thunderbird
 
 # Backup installed packages
 echo "Backing up installed packges..."
