@@ -3,7 +3,7 @@
 DIR=$1
 compos=$2
 
-convert $DIR/img/wallpaper.jpg $DIR/img/wallpaper.png
+magick convert $DIR/img/wallpaper.jpg $DIR/img/wallpaper.png
 cp $DIR/img/wallpaper.jpg $DIR/img/lockscreen.jpg
 cp $DIR/img/wallpaper.png $DIR/img/lockscreen.png
 wal -c
@@ -14,8 +14,8 @@ if [ "$compos" = "i3" ]; then
     feh --bg-fill $DIR/img/wallpaper.jpg
 fi
 if [ "$compos" = "hypr" ]; then
-    echo "executing swww"
-    swww img $DIR/img/wallpaper.jpg --transition-step 15 --transition-fps 30
+    echo "executing awww"
+    awww img $DIR/img/wallpaper.jpg --transition-step 15 --transition-fps 30
 fi
 
 echo "Updating Firefox colors"
