@@ -9,6 +9,6 @@
   "author": "Niek Janssen",
   "license": "ISC",
   "dependencies": {
-    "got": "^11.8.0"
+    "got": "^12.5.3"
   }
 }
