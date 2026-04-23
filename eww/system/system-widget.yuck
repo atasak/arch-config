@@ -1,5 +1,8 @@
 (defpoll time :initial '' :interval "1s" "date +'%H:%M:%S'")
 (defpoll date :initila '' :interval "10s" "date +'%A %d/%m'")
+(deflisten vram_total :initial '3' "system/system.sh total")
+(deflisten vram_reserved :initial '1' "system/system.sh reserved")
+(deflisten vram_used :initial '1' "system/system.sh used")
 
 (defwidget system_bar []
   (box
@@ -18,6 +21,13 @@
       :value_back "${100 - (EWW_RAM.free_mem * 100 / EWW_RAM.total_mem)}"
       :display "${round(EWW_RAM.used_mem / 1000000000, 1)}GB"
       :name "RAM")
+    (system_circle 
+      :value "${vram_used * 100 / vram_total}"
+      :value_back "${(vram_used + vram_reserved) * 100 / vram_total}"
+      ;:display "${round(vram_used / 1000, 1)}GB"
+      :display "${(vram_used + vram_reserved) * 100 / vram_total}"
+      ;:display "${100 - (EWW_RAM.available_mem * 100 / EWW_RAM.total_mem)}"
+      :name "VRAM")
     (system_circle 
       :value "${EWW_DISK['/'].used_perc}"
       :value_back ""
