@@ -19,6 +19,7 @@ hl.config ({
     },
 })
 
+-- Three finger workspace scrolling
 hl.gesture({
     fingers = 3,
     direction = "horizontal",

@@ -1,13 +1,11 @@
-require("util")
-
 hl.config({
     general = {
         gaps_in = 5,
         gaps_out = 5,
         border_size = 2,
         col = {
-            active_border = {colors = {"#33ccffee", "#00ff99ee"}, angle = 45},
-            inactive_border = "#595959aa",
+            active_border = {colors = {Wal.colors.color2, Wal.colors.color11}, angle = 45},
+            inactive_border = Wal.special.background,
         },
     },
 

@@ -1,3 +1,5 @@
+Json = require("json")
+
 function Dump(o)
     if type(o) == 'table' then
         local s = '{ '
@@ -29,4 +31,17 @@ function MergeDeep(objects, reuse)
         end
     end
     return result
+end
+
+function Read_file (path)
+    local file = io.open(path, "r")
+    if not file then return "" end
+    local content = file:read "*a"
+    file:close()
+    return content
+end
+
+function Read_json(path)
+    local content = Read_file(path)
+    return Json.parse(content)
 end
