@@ -1,6 +1,6 @@
 -- System binds
 hl.bind(Mod .. "end",               hl.dsp.exec_cmd("hyprshutdown -t 'Exit'"))
-hl.bind(Mod .. "q",                 hl.dsp.window.kill("activewindow"))
+hl.bind(Mod .. "q",                 hl.dsp.window.close("activewindow"))
 hl.bind(Mod .. "g",                 hl.dsp.window.float({window="activewindow"}))
 hl.bind(Mod .. Shift .. "g",        hl.dsp.window.fullscreen({Mode="fullscreen", window="activewindow"}))
 

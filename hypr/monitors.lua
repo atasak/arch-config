@@ -14,8 +14,8 @@ preferences["eDP-1"] = {pos = "left"}
 preferences["DP-5"] = {pos = "primary"}
 preferences["DP-6"] = {pos = "right"}
 -- Work screens
-preferences["DP-7"] = {pos = "primary"}
-preferences["DP-9"] = {pos = "right"}
+preferences["DP-8"] = {pos = "primary"}
+preferences["DP-11"] = {pos = "right"}
 
 local positions = {"left", "primary", "right"}
 
@@ -47,7 +47,7 @@ local function assign(name)
     if (prefs == nil) then preferred = "primary" else preferred=prefs.pos end
     for _, try in ipairs(position_try[preferred]) do
         if current[try].name == nil then
-            current[try] = MergeDeep({preferences.default, preferences[try], preferences[name], {pos = try, name = name, config={output=name}}})
+            current[try] = MergeDeep({preferences.default, preferences[try], preferences[name] or {}, {pos = try, name = name, config={output=name}}})
             hl.notification.create({text = "Monitor added: " .. try .. "(" .. name .. ")", timeout = 10000, icon="ok"})
             return
         end
@@ -78,6 +78,10 @@ local function reconfig()
     hl.timer(function() 
         Apply_workspaces(workspacemon("left"), workspacemon("primary"), workspacemon("right"))
     end, {timeout=100, type="oneshot"})
+    hl.timer(function() 
+        hl.exec_cmd("/home/niek/.theming/scripts/set_and_fetch.sh set 0 hypr")
+        hl.exec_cmd("eww open statusbar")
+    end, {timeout=5000, type="oneshot"})
 end
 
 local function swap(posa, posb)
