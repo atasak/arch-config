@@ -8,7 +8,7 @@ hl.bind(Mod .. Shift .. "g",        hl.dsp.window.fullscreen({Mode="fullscreen",
 local dirkeys = {"h", "j", "k", "l"}
 local dirnames = {"l", "d", "u", "r"}
 local dirdxs = {-10, 0, 0, 10}
-local dirdys = {-10, 10, -10, 0}
+local dirdys = {0, 10, -10, 0}
 
 for i = 1,4 do
     local dirkey = dirkeys[i]
@@ -20,7 +20,8 @@ for i = 1,4 do
     -- Move focussed window
     hl.bind(Mod .. Shift .. dirkey, hl.dsp.window.move({direction=dirname}))
     -- Resize focussed window
-    hl.bind(Alt .. dirkey,          hl.dsp.window.resize({x=dirdx, y=dirdy, window="acrivewindow"}))
+    hl.bind(Alt .. dirkey,          hl.dsp.window.resize({x=dirdx, y=dirdy, relative=true, window="activewindow"}), {repeating=true})
+    hl.notification.create({text = "resize command with: " .. dirdx .. ", " .. dirdy,timeout = 10000, icon="ok"})
 end
 
 -- Resize with mouse
@@ -58,13 +59,13 @@ end
 hl.bind(Mod          .. "F9",       hl.dsp.exec_cmd("pactl set-sink-mute 0 toggle"), {locked=true})
 hl.bind(Mod          .. "F10",      hl.dsp.exec_cmd("pactl set-sink-volume 0 -10%"), {locked=true})
 hl.bind(Mod          .. "F11",      hl.dsp.exec_cmd("pactl set-sink-volume 0 +10%"), {locked=true})
-hl.bind(Mod .. Shift .. "F10",      hl.dsp.exec_cmd("pactl set-sink-volume 0 -10%"), {locked=true})
-hl.bind(Mod .. Shift .. "F11",      hl.dsp.exec_cmd("pactl set-sink-volume 0 +10%"), {locked=true})
+hl.bind(Mod .. Shift .. "F10",      hl.dsp.exec_cmd("pactl set-sink-volume 0 -1%"), {locked=true})
+hl.bind(Mod .. Shift .. "F11",      hl.dsp.exec_cmd("pactl set-sink-volume 0 +1%"), {locked=true})
 hl.bind(Mod          .. "XF86AudioMute", hl.dsp.exec_cmd("pactl set-sink-mute 0 toggle"), {locked=true})
 hl.bind(Mod          .. "XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume 0 -10%"), {locked=true})
 hl.bind(Mod          .. "XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume 0 +10%"), {locked=true})
-hl.bind(Mod .. Shift .. "XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume 0 -10%"), {locked=true})
-hl.bind(Mod .. Shift .. "XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume 0 +10%"), {locked=true})
+hl.bind(Mod .. Shift .. "XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume 0 -1%"), {locked=true})
+hl.bind(Mod .. Shift .. "XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume 0 +1%"), {locked=true})
 
 -- Brightness
 
