@@ -14,14 +14,14 @@ hl.config({
 })
 
 -- Autoconnect all bluetooth devices (does not happen automatically)
-hl.on("hyprland.start", function ()
-    local tmpfile = os.tmpname()
-    os.execute("bluetoothctl devices | awk '{print $2}' > " .. tmpfile)
-    for device in io.lines(tmpfile) do
-        hl.exec_cmd ("bluetoothctl connect " .. device)
-    end
-
-end)
+-- hl.on("hyprland.start", function ()
+--     local tmpfile = os.tmpname()
+--     os.execute("bluetoothctl devices | awk '{print $2}' > " .. tmpfile)
+--     for device in io.lines(tmpfile) do
+--         hl.exec_cmd ("bluetoothctl connect " .. device)
+--     end
+-- 
+-- end)
 
 -- Notify on config reload
 hl.on("config.reloaded", function(mon)
