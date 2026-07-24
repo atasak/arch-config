@@ -75,5 +75,4 @@ hl.bind(Mod .. "XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"
 hl.bind(Mod .. "XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 10%+"))
 
 -- Print screen
-hl.bind("Print",                    hl.dsp.exec_cmd("grim -g $(slurp)"))
-hl.bind(Shift .. "Print",           hl.dsp.exec_cmd("grim -g $(slurp -d) - | wl-copy"))
+hl.bind("Print",                    hl.dsp.exec_cmd("grim -g \"$(slurp)\""))
