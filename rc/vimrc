@@ -50,6 +50,9 @@ set ic
 " Always display at least 6 lines above and below the cursor
 set scrolloff=50
 
+" Undofile: persistent undo history
+set undofile
+
 " disable folding
 set nofoldenable    
 

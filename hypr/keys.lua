@@ -35,6 +35,7 @@ hl.bind(Mod .. "f",                 hl.dsp.exec_cmd("firefox"))
 hl.bind(Mod .. "s",                 hl.dsp.exec_cmd("spotify-launcher", {workspace=10}))
 hl.bind(Mod .. "t",                 hl.dsp.exec_cmd("thunderbird", {workspace=9}))
 hl.bind(Mod .. "c",                 hl.dsp.exec_cmd("code"))
+hl.bind(Mod .. "r",                 hl.dsp.exec_cmd("rustrover"))
 
 -- Theming control
 for i = 0,7 do
