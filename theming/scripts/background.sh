@@ -22,7 +22,7 @@ echo "Updating Firefox colors"
 pywalfox update
 
 if [ "$compos" = "hypr" ]; then
-    eww reload
+    /home/niek/.config/eww/statusbar.sh reload
 fi
 
 

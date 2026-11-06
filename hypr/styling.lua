@@ -33,6 +33,6 @@ hl.animation({leaf = "workspaces", enabled = true, speed=4, bezier = "animate"})
 hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("/home/niek/.theming/scripts/set_and_fetch.sh set 0 hypr")
-    hl.exec_cmd("eww open statusbar")
+    hl.exec_cmd("/home/niek/.config/eww/statusbar.sh restart")
 end)
 

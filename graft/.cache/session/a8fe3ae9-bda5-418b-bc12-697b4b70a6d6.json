@@ -1,0 +1,15 @@
+{
+  "lastQuery": "Yes please do the swap",
+  "perAgentQuery": {},
+  "graftReads": 0,
+  "sourceReads": 0,
+  "savedTokens": 0,
+  "injectedPointers": [
+    "hypr/monitors.lua:L96-L103",
+    "quteconfig.py"
+  ],
+  "nudges": 1,
+  "inputCostMicros": 826179,
+  "inputTokensBilled": 1160411,
+  "lastBillingUuid": "78e11491-37d9-460c-9c7b-c2403cccd01a"
+}

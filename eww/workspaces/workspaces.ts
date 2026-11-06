@@ -277,7 +277,7 @@ async function restoreWorkspaces() {
         await strCmd(`hyprctl keyword workspace "${ws.id}, monitor:${ws.monitor.output}"`)
     for (const mon of filterNull(monitors))
         await strCmd(`hyprctl dispatch workspace ${mon.active + 1}`)
-    await strCmd(`swww img /home/niek/.arch-config/theming/img/wallpaper.jpg`)
+    await strCmd(`awww img /home/niek/.arch-config/theming/img/wallpaper.jpg`)
 }
 
 function init(print: () => void): () => Promise<void> {

@@ -69,18 +69,27 @@ local function workspacemon(monpos)
     end
 end
 
+-- Debounce: every reconfig bumps the generation; a timer only acts if no newer
+-- reconfig happened in the meantime, so a burst of monitor events results in a
+-- single workspace/theme/eww run.
+local reconfig_gen = 0
+
 local function reconfig()
     for _,pos in ipairs(positions) do
         local config = current[pos].config
         if current[pos].mirrored then config = MergeDeep({config, {mirror = mirrorof(current[pos])}}) end
         hl.monitor(config)
     end
-    hl.timer(function() 
+    reconfig_gen = reconfig_gen + 1
+    local gen = reconfig_gen
+    hl.timer(function()
+        if gen ~= reconfig_gen then return end
         Apply_workspaces(workspacemon("left"), workspacemon("primary"), workspacemon("right"))
     end, {timeout=100, type="oneshot"})
-    hl.timer(function() 
+    hl.timer(function()
+        if gen ~= reconfig_gen then return end
         hl.exec_cmd("/home/niek/.theming/scripts/set_and_fetch.sh set 0 hypr")
-        hl.exec_cmd("eww open statusbar")
+        hl.exec_cmd("/home/niek/.config/eww/statusbar.sh open")
     end, {timeout=5000, type="oneshot"})
 end
 
@@ -104,6 +113,9 @@ hl.on("monitor.added", function(mon)
 end)
 
 hl.on("config.reloaded", function()
+    -- Start from a clean slate, otherwise already-assigned monitors get
+    -- assigned a second time into the next free position.
+    for _, pos in ipairs(positions) do current[pos] = {} end
     local mons = hl.get_monitors()
     for _, mon in ipairs(mons) do
         assign(mon.name)
