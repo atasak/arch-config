@@ -19,7 +19,8 @@
     (system_circle 
       :value "${100 - (EWW_RAM.available_mem * 100 / EWW_RAM.total_mem)}"
       :value_back "${100 - (EWW_RAM.free_mem * 100 / EWW_RAM.total_mem)}"
-      :display "${round(EWW_RAM.used_mem / 1000000000, 1)}GB"
+      :value_inner "${EWW_RAM.total_swap > 0 ? (EWW_RAM.total_swap - EWW_RAM.free_swap) * 100 / EWW_RAM.total_swap : 0}"
+      :display "${round(EWW_RAM.used_mem / 1000000000, 1) + 'GB' + (EWW_RAM.total_swap - EWW_RAM.free_swap >= 100000000 ? ' +' + round((EWW_RAM.total_swap - EWW_RAM.free_swap) / 1000000000, 1) + 'GB' : '')}"
       :name "RAM")
     (system_circle 
       :value "${vram_used * 100 / vram_total}"
@@ -46,7 +47,7 @@
     (system_menu)
 ))
   
-(defwidget system_circle [value value_back display name]
+(defwidget system_circle [value value_back display name ?value_inner]
   (box
     :class "pm-0"
     :space-evenly false
@@ -66,6 +67,16 @@
         :space-evenly false
         (circular-progress
           :value value
+          :thickness 14
+          :start-at 75
+          :clockwise false)
+      )
+      (box
+        :class "sys-circle-swap"
+        :space-evenly false
+        :visible {value_inner != ""}
+        (circular-progress
+          :value {value_inner == "" ? 0 : value_inner}
           :thickness 14
           :start-at 75
           :clockwise false)
