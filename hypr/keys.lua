@@ -30,6 +30,7 @@ hl.bind(Alt .. "control_l", hl.dsp.window.resize(), {mouse=true})
 -- Bound applications
 hl.bind(Mod .. "d",                 hl.dsp.exec_cmd("fuzzel"))
 hl.bind(Mod .. "pause",             hl.dsp.exec_cmd("swaylock --image ~/.theming/img/lockscreen.jpg"))
+hl.bind(Mod .. "z",             hl.dsp.exec_cmd("swaylock --image ~/.theming/img/lockscreen.jpg"))
 hl.bind(Mod .. "return",            hl.dsp.exec_cmd("kitty"))
 hl.bind(Mod .. "f",                 hl.dsp.exec_cmd("firefox"))
 hl.bind(Mod .. "s",                 hl.dsp.exec_cmd("spotify-launcher", {workspace=10}))
